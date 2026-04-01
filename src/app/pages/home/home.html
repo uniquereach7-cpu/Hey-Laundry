@@ -1,0 +1,222 @@
+<main id="home-page">
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero-section">
+        <!-- Animated Bubbles Background -->
+        <div class="bubbles-container">
+            @for (bubble of bubbles; track bubble.id) {
+            <div class="floating-bubble" [style.left]="bubble.left" [style.width]="bubble.size"
+                [style.height]="bubble.size" [style.animation-delay]="bubble.delay"
+                [style.animation-duration]="bubble.duration"></div>
+            }
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">🫧 #1 Laundry Service in Town</div>
+                <h1>
+                    We Wash. <br />
+                    <span class="hero-highlight">You Chill.</span> 😎
+                </h1>
+                <p class="hero-description">
+                    Say goodbye to laundry day blues! Hey Laundry picks up your dirty clothes, gives them the royal
+                    treatment, and delivers them fresh & folded. It's like magic, but with more soap!
+                </p>
+                <div class="hero-actions">
+                    <a routerLink="/contact" class="btn-primary" id="hero-cta-primary">
+                        Schedule Free Pickup 🧺
+                    </a>
+                    <a routerLink="/pricing" class="btn-secondary" id="hero-cta-secondary">
+                        View Pricing 💰
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-avatars">
+                        <span class="avatar">😊</span>
+                        <span class="avatar">🥰</span>
+                        <span class="avatar">😍</span>
+                        <span class="avatar">🤩</span>
+                    </div>
+                    <span>Loved by <strong>10,000+</strong> happy customers</span>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <img src="assets/images/hey1.jpg"
+                        alt="Hey Laundry - Professional wash, fold and delivery service with fresh clean clothes"
+                        loading="eager" />
+                    <div class="hero-float-card card-2">
+                        <span class="card-emoji">♻️</span>
+                        <span>Eco-Friendly</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Divider -->
+        <div class="wave-divider">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,80 C240,120 480,40 720,80 C960,120 1200,40 1440,80 L1440,120 L0,120 Z" fill="white" />
+            </svg>
+        </div>
+    </section>
+     <!-- ===== WHY CHOOSE US ===== -->
+    <section class="why-us" id="why-us-section">
+        <div class="container">
+            <div class="why-us-grid">
+                <div class="why-us-content animate-on-scroll">
+                    <div class="section-badge">🌟 Why Hey Laundry?</div>
+                    <h2 class="section-title" style="text-align: left;">Because Life's Too Short for Laundry!</h2>
+                    <p class="why-us-description">
+                        We're not just a laundry service — we're your laundry-day superheroes! 🦸‍♂️ While you binge
+                        your favorite shows, we're battling stains, conquering wrinkles, and making your whites whiter
+                        than a polar bear in a snowstorm.
+                    </p>
+                    <ul class="why-us-list">
+                        <li>
+                            <span class="check">✅</span>
+                            <div>
+                                <strong>Premium Cleaning</strong>
+                                <span>Eco-friendly detergents that love your clothes & the planet</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check">✅</span>
+                            <div>
+                                <strong>Lightning Fast</strong>
+                                <span>24-hour turnaround because ain't nobody got time to wait</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check">✅</span>
+                            <div>
+                                <strong>Free Pickup & Delivery</strong>
+                                <span>We come to you. Yes, right to your door. In pants.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check">✅</span>
+                            <div>
+                                <strong>Satisfaction Guaranteed</strong>
+                                <span>Not happy? We'll re-wash it. No drama, just clean clothes.</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <a routerLink="/services" class="btn-primary" id="why-us-cta">Explore Services →</a>
+                </div>
+                <div class="why-us-visual animate-on-scroll">
+                    <img src="assets/images/hey9.jpg"
+                        alt="Relax while Hey Laundry handles your laundry with professional garment care"
+                        loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="how-it-works" id="how-it-works-section">
+        <div class="container">
+            <!-- <div class="section-badge animate-on-scroll">🧼 Simple as 1-2-3-4</div> -->
+            <h2 class="section-title animate-on-scroll">How It Works</h2>
+            <p class="section-subtitle animate-on-scroll">Getting fresh, clean clothes has never been this easy (or this
+                fun!)</p>
+
+            <div class="steps-grid">
+                @for (step of howItWorks; track step.step) {
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">{{ step.step }}</div>
+                    <div class="step-emoji">{{ step.emoji }}</div>
+                    <h3>{{ step.title }}</h3>
+                    <p>{{ step.description }}</p>
+                </div>
+                }
+            </div>
+            <section class="video-section">
+  <div class="video-container">
+    <video 
+      #promoVideo
+      autoplay 
+      loop 
+      muted 
+      playsinline 
+      class="promo-video"
+    >
+      <source src="assets/images/video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+            <!-- <div class="how-illustration animate-on-scroll">
+                <img src="assets/images/how-it-works.png"
+                    alt="How Hey Laundry works - schedule pickup, we collect, expert wash, fresh delivery"
+                    loading="lazy" />
+            </div> -->
+        </div>
+    </section>
+    
+
+   
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials" id="testimonials-section">
+        <div class="container">
+            <div class="section-badge animate-on-scroll">💬 What Our Customers Say</div>
+            <h2 class="section-title animate-on-scroll">They Tried Us. They Loved Us!</h2>
+            <p class="section-subtitle animate-on-scroll">Don't just take our word for it — hear from our
+                freshly-clothed fans!</p>
+
+            <div class="testimonial-grid">
+                @for (testimonial of testimonials; track testimonial.name) {
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">
+                        @for (star of [1,2,3,4,5]; track star) {
+                        <span class="star">⭐</span>
+                        }
+                    </div>
+                    <p class="testimonial-text">"{{ testimonial.text }}"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">{{ testimonial.name.charAt(0) }}</div>
+                        <span class="author-name">{{ testimonial.name }}</span>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+     <!-- ===== STATS SECTION ===== -->
+    <section class="stats-section" id="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                @for (stat of stats; track stat.label) {
+                <div class="stat-card animate-on-scroll">
+                    <span class="stat-emoji">{{ stat.emoji }}</span>
+                    <span class="stat-number">{{ stat.number }}</span>
+                    <span class="stat-label">{{ stat.label }}</span>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="cta-section" id="cta-section">
+        <div class="container">
+            <div class="cta-card animate-on-scroll">
+                <div class="cta-bubbles">
+                    <div class="cta-bubble cta-b1"></div>
+                    <div class="cta-bubble cta-b2"></div>
+                    <div class="cta-bubble cta-b3"></div>
+                </div>
+                <h2>Ready to Say "Hey!" to Fresh Clothes? 👋</h2>
+                <p>Join 10,000+ smart people who've already ditched their laundry basket. Your first pickup is on us!
+                </p>
+                <div class="cta-actions">
+                    <a routerLink="/contact" class="btn-primary cta-btn" id="bottom-cta-primary">Get Started Free 🚀</a>
+                    <a routerLink="/pricing" class="btn-secondary cta-btn-sec" id="bottom-cta-secondary">See Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

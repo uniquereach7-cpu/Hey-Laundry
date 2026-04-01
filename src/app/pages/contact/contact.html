@@ -1,0 +1,159 @@
+<main id="contact-page">
+    <!-- ===== HERO ===== -->
+    <section class="contact-hero" id="contact-hero">
+        <div class="hero-bubbles">
+            <div class="h-bubble h-b1"></div>
+            <div class="h-bubble h-b2"></div>
+            <div class="h-bubble h-b3"></div>
+        </div>
+        <div class="container">
+            <div class="contact-hero-content">
+                <div class="section-badge-light">📬 Get In Touch</div>
+                <h1>Say "Hey!" to Us 👋</h1>
+                <p>Questions? Want a pickup? Just want to chat about laundry? (We don't judge!) Drop us a line and we'll
+                    get back to you faster than your spin cycle!</p>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,70 1440,60 L1440,120 L0,120 Z" fill="white" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact-section" id="contact-form-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Form -->
+                <div class="contact-form-wrapper animate-on-scroll">
+                    @if (!isSubmitted) {
+                    <h2>Schedule a Pickup</h2>
+                    <p class="form-subtitle">Fill in the details and we'll handle the rest! 🫧</p>
+
+                    @if (errorMessage) {
+                    <div class="error-alert" id="form-error">
+                        <span>⚠️</span> {{ errorMessage }}
+                    </div>
+                    }
+
+                    <form (ngSubmit)="onSubmit()" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" [(ngModel)]="formData.name" name="name"
+                                placeholder="What should we call you?" required />
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" [(ngModel)]="formData.email" name="email"
+                                    placeholder="your@email.com" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" [(ngModel)]="formData.phone" name="phone"
+                                    placeholder="+91 98765 43210" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Needed</label>
+                            <select id="service" [(ngModel)]="formData.service" name="service">
+                                <option value="">Select a service</option>
+                                @for (service of services; track service) {
+                                <option [value]="service">{{ service }}</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" [(ngModel)]="formData.message" name="message"
+                                placeholder="Tell us what you need. Don't be shy! 😊" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary submit-btn" [disabled]="isSubmitting" id="submit-btn">
+                            @if (isSubmitting) {
+                            <span class="spinner"></span> Sending...
+                            } @else {
+                            Send Message 🚀
+                            }
+                        </button>
+                    </form>
+                    } @else {
+                    <div class="success-message" id="form-success">
+                        <div class="success-icon">🎉</div>
+                        <h2>Message Sent!</h2>
+                        <p>Awesome! We got your message. Our team will reach out to you shortly. Meanwhile, sit back and
+                            let us worry about the laundry!</p>
+                        <button class="btn-secondary" (click)="resetForm()" id="send-another-btn">Send Another
+                            Message</button>
+                    </div>
+                    }
+                </div>
+
+                <!-- Info Sidebar -->
+                <div class="contact-sidebar">
+                    <div class="sidebar-illustration animate-on-scroll">
+                        <img src="assets/images/contact-illustration.png"
+                            alt="Contact Hey Laundry for pickup and delivery laundry service" loading="lazy" />
+                    </div>
+
+                    <div class="contact-info-cards">
+                        @for (info of contactInfo; track info.label) {
+                        <a [href]="info.link" class="info-card animate-on-scroll">
+                            <span class="info-icon">{{ info.icon }}</span>
+                            <div>
+                                <strong>{{ info.label }}</strong>
+                                <span>{{ info.value }}</span>
+                            </div>
+                        </a>
+                        }
+                    </div>
+
+                    <div class="fun-fact-card animate-on-scroll">
+                        <div class="fun-icon">💡</div>
+                        <h4>Fun Fact</h4>
+                        <p>The average person spends <strong>6 months</strong> of their lifetime doing laundry. That's 6
+                            months of Netflix you're missing out on! Let us help! 📺</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAP / SOCIAL ===== -->
+    <section class="social-section" id="social-section">
+        <div class="container">
+            <div class="social-card animate-on-scroll">
+                <h2>Follow Us for Laundry Tips, Deals & Dad Jokes 😂</h2>
+                <p>Stay connected! We share washing tips, exclusive offers, and the occasional laundry pun. (They're
+                    loads of fun! 🥁)</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn" id="social-fb-btn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                        Facebook
+                    </a>
+                    <a href="#" class="social-btn" id="social-ig-btn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                        Instagram
+                    </a>
+                    <a href="#" class="social-btn" id="social-tw-btn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                        Twitter/X
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

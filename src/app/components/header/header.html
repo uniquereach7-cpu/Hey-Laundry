@@ -1,0 +1,38 @@
+<header [class.scrolled]="isScrolled" id="main-header">
+    <div class="header-container">
+        <a routerLink="/" class="logo" id="logo-link" (click)="closeMobileMenu()">
+            <img src="assets/images/logo.png" alt="Hey Laundry - Professional Laundry Service" class="logo-img" />
+        </a>
+
+        <nav class="desktop-nav" id="desktop-navigation">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" id="nav-home">Home</a>
+            <a routerLink="/services" routerLinkActive="active" id="nav-services">Services</a>
+            <a routerLink="/pricing" routerLinkActive="active" id="nav-pricing">Pricing</a>
+            <a routerLink="/contact" routerLinkActive="active" id="nav-contact">Contact</a>
+        </nav>
+
+        <a routerLink="/contact" class="header-cta btn-primary" id="header-cta-btn">
+            Schedule Pickup 🧺
+        </a>
+
+        <button class="mobile-menu-btn" (click)="toggleMobileMenu()" [class.active]="mobileMenuOpen"
+            id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <div class="mobile-nav" [class.open]="mobileMenuOpen" id="mobile-navigation">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+            (click)="closeMobileMenu()" id="mobile-nav-home">Home</a>
+        <a routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()"
+            id="mobile-nav-services">Services</a>
+        <a routerLink="/pricing" routerLinkActive="active" (click)="closeMobileMenu()"
+            id="mobile-nav-pricing">Pricing</a>
+        <a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()"
+            id="mobile-nav-contact">Contact</a>
+        <a routerLink="/contact" class="btn-primary mobile-cta" (click)="closeMobileMenu()" id="mobile-cta-btn">Schedule
+            Pickup 🧺</a>
+    </div>
+</header>

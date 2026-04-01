@@ -1,0 +1,111 @@
+<main id="services-page">
+    <!-- ===== HERO BANNER ===== -->
+    <section class="services-hero" id="services-hero">
+        <div class="hero-bubbles">
+            <div class="h-bubble h-b1"></div>
+            <div class="h-bubble h-b2"></div>
+            <div class="h-bubble h-b3"></div>
+            <div class="h-bubble h-b4"></div>
+            <div class="h-bubble h-b5"></div>
+        </div>
+        <div class="container">
+            <div class="services-hero-content">
+                <div class="section-badge">🧼 What We Do</div>
+                <h1>Our Laundry Services</h1>
+                <p>From everyday essentials to designer garments — we clean it all with expert care, a splash of water,
+                    and a whole lot of love! 💙</p>
+            </div>
+            <div class="services-hero-illustration">
+                <img src="assets/images/services-illustration.png"
+                    alt="Hey Laundry services - wash fold iron dry clean garment care" loading="eager" />
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,70 1440,60 L1440,120 L0,120 Z" fill="white" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES GRID ===== -->
+    <section class="services-section" id="all-services">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Everything Your Clothes Need 🫧</h2>
+            <p class="section-subtitle animate-on-scroll">Pick a service. Any service. We'll make your clothes feel
+                brand new!</p>
+
+            <div class="services-grid">
+                @for (service of services; track service.title) {
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">{{ service.icon }}</div>
+                    <h3>{{ service.title }}</h3>
+                    <p class="service-desc">{{ service.description }}</p>
+                    <ul class="service-features">
+                        @for (feature of service.features; track feature) {
+                        <li>
+                            <span class="feature-check">✓</span>
+                            {{ feature }}
+                        </li>
+                        }
+                    </ul>
+                    <p class="service-fun-fact">{{ service.funFact }}</p>
+                    <a routerLink="/pricing" class="service-cta">See Pricing →</a>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESS SECTION ===== -->
+    <section class="process-section" id="our-process">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">How We Roll 🫧</h2>
+            <p class="section-subtitle animate-on-scroll">4 simple steps to clothes nirvana. Easier than ordering pizza!
+                🍕</p>
+
+            <div class="process-timeline">
+                @for (step of process; track step.step) {
+                <div class="process-step animate-on-scroll">
+                    <div class="process-icon">{{ step.icon }}</div>
+                    <div class="process-number">{{ step.step }}</div>
+                    <h3>{{ step.title }}</h3>
+                    <p>{{ step.desc }}</p>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GUARANTEE ===== -->
+    <section class="guarantee-section" id="our-guarantee">
+        <div class="container">
+            <div class="guarantee-card animate-on-scroll">
+                <div class="guarantee-icon">🛡️</div>
+                <h2>The "Hey, We've Got You!" Guarantee</h2>
+                <p>
+                    Not 100% happy? We'll re-wash your clothes for free. No questions asked, no awkward conversations,
+                    no side-eye. Just clean clothes and happy vibes!
+                </p>
+                <div class="guarantee-features">
+                    <div class="g-feature">
+                        <span>🔄</span>
+                        <strong>Free Re-wash</strong>
+                    </div>
+                    <div class="g-feature">
+                        <span>💰</span>
+                        <strong>No Hidden Fees</strong>
+                    </div>
+                    <div class="g-feature">
+                        <span>🌿</span>
+                        <strong>Eco-Friendly</strong>
+                    </div>
+                    <div class="g-feature">
+                        <span>📞</span>
+                        <strong>24/7 Support</strong>
+                    </div>
+                </div>
+                <a routerLink="/contact" class="btn-primary" id="guarantee-cta">Try Us Risk-Free 🚀</a>
+            </div>
+        </div>
+    </section>
+</main>
