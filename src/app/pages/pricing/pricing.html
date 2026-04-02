@@ -1,40 +1,22 @@
 <main id="pricing-page">
-    <!-- ===== HERO ===== -->
     <section class="pricing-hero" id="pricing-hero">
-        <div class="hero-bubbles">
-            <div class="h-bubble h-b1"></div>
-            <div class="h-bubble h-b2"></div>
-            <div class="h-bubble h-b3"></div>
-        </div>
+        <div class="hero-glow"></div>
         <div class="container">
-            <div class="pricing-hero-content">
-                <div class="section-badge-light">💰 Transparent Pricing</div>
-                <h1>Clean Clothes. Clear Prices.</h1>
-                <p>No hidden charges. No surprises. Just sparkly clean clothes at prices that won't make your wallet
-                    cry! 💙</p>
-            </div>
-        </div>
-        <div class="wave-divider">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,70 1440,60 L1440,120 L0,120 Z" fill="white" />
-            </svg>
+            <div class="hero-badge"><span class="badge-dot"></span> Pricing</div>
+            <h1>Simple, <span class="gradient-text">Transparent</span> Pricing</h1>
+            <p class="hero-subtitle">No hidden fees, no surprises. Pick a plan that works for you! 💰</p>
         </div>
     </section>
 
-    <!-- ===== PRICING PLANS ===== -->
     <section class="plans-section" id="pricing-plans">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Pick Your Clean ✨</h2>
-            <p class="section-subtitle animate-on-scroll">Three plans, one goal: making your clothes (and you) feel
-                amazing!</p>
-
             <div class="plans-grid">
                 @for (plan of plans; track plan.name) {
-                <div class="plan-card animate-on-scroll" [class.popular]="plan.popular">
+                <div class="plan-card glass-card animate-on-scroll" [class.popular]="plan.popular">
                     @if (plan.popular) {
                     <div class="popular-badge">⭐ Most Popular</div>
                     }
-                    <div class="plan-emoji">{{ plan.emoji }}</div>
+                    <div class="plan-icon">{{ plan.icon }}</div>
                     <h3 class="plan-name">{{ plan.name }}</h3>
                     <p class="plan-tagline">{{ plan.tagline }}</p>
                     <div class="plan-price">
@@ -44,19 +26,11 @@
                     </div>
                     <ul class="plan-features">
                         @for (feature of plan.features; track feature) {
-                        <li>
-                            <span class="feature-icon">✓</span>
-                            {{ feature }}
-                        </li>
+                        <li><span class="feature-check">✓</span> {{ feature }}</li>
                         }
                     </ul>
-                    <a routerLink="/contact" class="plan-cta" [class.primary]="plan.popular"
-                        id="plan-cta-{{ plan.name }}">
-                        @if (plan.popular) {
-                        Get Started 🚀
-                        } @else {
-                        Choose Plan →
-                        }
+                    <a href="tel:+919876543210" class="plan-cta" [class.primary]="plan.popular" [id]="'plan-cta-' + plan.name">
+                        {{ plan.popular ? '📞 Schedule a Pickup' : 'Choose Plan' }}
                     </a>
                 </div>
                 }
@@ -64,24 +38,20 @@
         </div>
     </section>
 
-    <!-- ===== PER-ITEM PRICING ===== -->
     <section class="item-pricing" id="item-pricing">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Per-Item Pricing 🏷️</h2>
-            <p class="section-subtitle animate-on-scroll">Prefer per-piece pricing? We've got you covered!</p>
-
-            <div class="pricing-table-wrapper animate-on-scroll">
-                <div class="pricing-illustration">
-                    <img src="assets/images/pricing-illustration.png"
-                        alt="Hey Laundry transparent pricing for wash fold iron dry cleaning services" loading="lazy" />
-                </div>
+            <div class="section-divider"></div>
+            <p class="section-label" style="text-align:center;display:block;">Per Item</p>
+            <h2 class="section-title animate-on-scroll">Individual Item Pricing</h2>
+            <p class="section-subtitle animate-on-scroll">Prefer per-piece? See prices at a glance 👇</p>
+            <div class="pricing-table-wrapper glass-card animate-on-scroll">
                 <table class="pricing-table" id="item-pricing-table">
                     <thead>
                         <tr>
-                            <th>Item</th>
+                            <th>👕 Item</th>
                             <th>Wash & Fold</th>
                             <th>Wash & Iron</th>
-                            <th>Dry Cleaning</th>
+                            <th>Dry Clean</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -99,23 +69,21 @@
         </div>
     </section>
 
-    <!-- ===== FAQs ===== -->
     <section class="faq-section" id="faqs">
         <div class="container">
+            <div class="section-divider"></div>
+            <p class="section-label" style="text-align:center;display:block;">FAQ</p>
             <h2 class="section-title animate-on-scroll">Got Questions? 🤔</h2>
-            <p class="section-subtitle animate-on-scroll">We've got answers! (And clean clothes, obviously.)</p>
-
+            <p class="section-subtitle animate-on-scroll">We've got answers!</p>
             <div class="faq-list">
                 @for (faq of faqs; track faq.question; let i = $index) {
-                <div class="faq-item animate-on-scroll" [class.open]="faq.open">
+                <div class="faq-item glass-card animate-on-scroll" [class.open]="faq.open">
                     <button class="faq-question" (click)="toggleFaq(i)" [id]="'faq-' + i">
                         <span>{{ faq.question }}</span>
                         <span class="faq-toggle">{{ faq.open ? '−' : '+' }}</span>
                     </button>
                     @if (faq.open) {
-                    <div class="faq-answer">
-                        <p>{{ faq.answer }}</p>
-                    </div>
+                    <div class="faq-answer"><p>{{ faq.answer }}</p></div>
                     }
                 </div>
                 }
@@ -123,13 +91,13 @@
         </div>
     </section>
 
-    <!-- ===== CTA ===== -->
     <section class="pricing-cta" id="pricing-cta">
         <div class="container">
             <div class="cta-card animate-on-scroll">
-                <h2>Still Deciding? Start with a Free Pickup! 🎉</h2>
-                <p>Try any plan risk-free. If you don't love it, we'll give you a full refund. Pinky promise! 🤙</p>
-                <a routerLink="/contact" class="btn-primary" id="pricing-bottom-cta">Schedule Free Pickup →</a>
+                <div class="cta-glow"></div>
+                <h2>Ready to Ditch the Laundry Pile? 🧺</h2>
+                <p>Try any plan risk-free. 100% satisfaction guaranteed — or it's free!</p>
+                <a href="tel:+919876543210" class="btn-primary" id="pricing-bottom-cta">📞 Schedule a Pickup</a>
             </div>
         </div>
     </section>

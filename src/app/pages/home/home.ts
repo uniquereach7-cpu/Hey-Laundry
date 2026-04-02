@@ -10,44 +10,46 @@ import { CommonModule } from '@angular/common';
     styleUrl: './home.css',
 })
 export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
-    // Added ViewChild for the video element
     @ViewChild('promoVideo') videoElement!: ElementRef<HTMLVideoElement>;
-
-    bubbles: { id: number; left: string; size: string; delay: string; duration: string }[] = [];
     private animationObserver: IntersectionObserver | null = null;
 
     stats = [
-        { number: '10K+', label: 'Happy Customers', emoji: '😊' },
-        { number: '50K+', label: 'Clothes Washed', emoji: '👕' },
-        { number: '99%', label: 'Satisfaction Rate', emoji: '⭐' },
-        { number: '24hr', label: 'Turnaround Time', emoji: '⚡' },
+        { number: '10,000+', label: 'Happy Customers' },
+        { number: '50,000+', label: 'Garments Cleaned' },
+        { number: '99%', label: 'Satisfaction Rate' },
+        { number: '24hr', label: 'Turnaround Time' },
+    ];
+
+    whyUs = [
+        { title: 'Premium Eco Products', desc: 'Gentle on fabrics, tough on stains — and kind to the planet' },
+        { title: 'Lightning Fast Service', desc: '24-hour turnaround so you never run out of clean clothes' },
+        { title: 'Free Pickup & Delivery', desc: 'We come to your door — no trips, no hassle, just fresh clothes' },
+        { title: 'Satisfaction Guaranteed', desc: 'Not happy? We\'ll re-clean for free. No questions asked!' },
     ];
 
     howItWorks = [
-        { step: '01', title: 'Schedule Pickup', description: 'Book online in 30 seconds. Choose a time that works for you.', emoji: '📱' },
+        { step: '01', title: 'Schedule', description: 'Book a pickup online or call us — takes just 30 seconds!', emoji: '📱' },
         { step: '02', title: 'We Collect', description: 'Our friendly team picks up your laundry from your doorstep.', emoji: '🚪' },
-        { step: '03', title: 'Expert Wash', description: 'We clean your clothes with premium care and eco-friendly products.', emoji: '🫧' },
-        { step: '04', title: 'Fresh Delivery', description: 'Clean, fresh clothes delivered back to you, neatly folded.', emoji: '✨' },
+        { step: '03', title: 'Expert Care', description: 'Premium cleaning with eco-friendly products & expert handling.', emoji: '✨' },
+        { step: '04', title: 'Fresh Delivery', description: 'Perfectly clean clothes delivered back, neatly folded.', emoji: '🧺' },
     ];
 
     testimonials = [
-        { name: 'Priya S.', text: 'Hey Laundry saved my weekends! No more laundry marathons. My clothes come back smelling amazing! 🌸', rating: 5 },
-        { name: 'Rahul M.', text: "Best decision ever! They handle my office shirts perfectly. I'm convinced they use magic, not detergent! 🪄", rating: 5 },
-        { name: 'Ananya K.', text: 'Super affordable and the quality is top-notch. My whites are actually WHITE now! 😍', rating: 5 },
+        { name: 'Priya S.', text: 'Hey Laundry saved my weekends! My clothes come back smelling amazing and perfectly pressed. Best service ever! 🌸', rating: 5 },
+        { name: 'Rahul M.', text: 'They handle my office shirts perfectly every single time. The express service is a lifesaver for busy mornings!', rating: 5 },
+        { name: 'Ananya K.', text: 'Super affordable and the quality is outstanding. My whites are actually WHITE now! Highly recommend to everyone. 😍', rating: 5 },
     ];
 
     ngOnInit() {
-        this.generateBubbles();
         this.setupScrollAnimations();
     }
 
-    // Added lifecycle hook for video autoplay
     ngAfterViewInit(): void {
         if (this.videoElement && this.videoElement.nativeElement) {
             const video = this.videoElement.nativeElement;
-            video.muted = true; // Crucial to allow autoplay in modern browsers
+            video.muted = true;
             video.play().catch(error => {
-                console.error('Video autoplay was prevented by the browser:', error);
+                console.error('Video autoplay was prevented:', error);
             });
         }
     }
@@ -55,18 +57,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     ngOnDestroy() {
         if (this.animationObserver) {
             this.animationObserver.disconnect();
-        }
-    }
-
-    generateBubbles() {
-        for (let i = 0; i < 15; i++) {
-            this.bubbles.push({
-                id: i,
-                left: Math.random() * 100 + '%',
-                size: Math.random() * 30 + 10 + 'px',
-                delay: Math.random() * 8 + 's',
-                duration: Math.random() * 6 + 8 + 's',
-            });
         }
     }
 
@@ -82,7 +72,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
                 },
                 { threshold: 0.1 }
             );
-
             setTimeout(() => {
                 document.querySelectorAll('.animate-on-scroll').forEach((el) => {
                     this.animationObserver?.observe(el);

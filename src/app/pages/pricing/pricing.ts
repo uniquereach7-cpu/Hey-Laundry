@@ -14,57 +14,31 @@ export class PricingComponent implements OnInit, OnDestroy {
 
     plans = [
         {
-            name: 'Fresh Start',
-            emoji: '🫧',
-            tagline: 'Perfect for singles & students',
+            name: 'Essential',
+            icon: '🧺',
+            tagline: 'Great for individuals',
             price: '49',
             unit: '/kg',
-            features: [
-                'Wash & Fold',
-                'Standard Detergent',
-                '48-hour Turnaround',
-                'Free Pickup & Delivery',
-                'Sorted by Color',
-            ],
+            features: ['Wash & Fold', 'Standard Detergent', '48-hour Turnaround', 'Free Pickup & Delivery', 'Sorted by Colour'],
             popular: false,
-            color: 'blue',
         },
         {
-            name: 'Clean Machine',
-            emoji: '⚡',
-            tagline: 'Most popular for families',
+            name: 'Premium',
+            icon: '⭐',
+            tagline: 'Perfect for families',
             price: '79',
             unit: '/kg',
-            features: [
-                'Wash & Iron',
-                'Premium Detergent',
-                '24-hour Turnaround',
-                'Free Pickup & Delivery',
-                'Fabric Softener Included',
-                'Stain Pre-treatment',
-                'On Hangers',
-            ],
+            features: ['Wash & Iron', 'Eco-Friendly Detergent', '24-hour Turnaround', 'Free Pickup & Delivery', 'Fabric Softener', 'Stain Treatment', 'Hanger Delivery'],
             popular: true,
-            color: 'gold',
         },
         {
-            name: 'Royal Treatment',
-            emoji: '👑',
-            tagline: 'For those who want the best',
+            name: 'Signature',
+            icon: '💎',
+            tagline: 'The ultimate care package',
             price: '149',
             unit: '/kg',
-            features: [
-                'Dry Cleaning',
-                'Premium Eco Products',
-                'Same-Day Rush Available',
-                'Free Pickup & Delivery',
-                'Color Protection',
-                'Expert Stain Removal',
-                'Pressed & Packaged',
-                'Garment Insurance',
-            ],
+            features: ['Dry Cleaning', 'Premium Products', 'Same-Day Rush', 'Free Pickup & Delivery', 'Colour Protection', 'Expert Stain Removal', 'Pressed & Packaged', 'Garment Insurance'],
             popular: false,
-            color: 'purple',
         },
     ];
 
@@ -80,45 +54,25 @@ export class PricingComponent implements OnInit, OnDestroy {
     ];
 
     faqs = [
-        { question: 'How does pickup & delivery work?', answer: 'Just schedule a pickup online. Our friendly team arrives at your doorstep, collects your laundry, and delivers it back fresh & clean. It\'s easier than ordering food! 🍕', open: false },
-        { question: 'What if my clothes are damaged?', answer: 'We treat every garment like it\'s our own! But in the rare case of damage, our garment insurance covers the cost. We\'ve got your back (and your shirts)! 🛡️', open: false },
-        { question: 'How long does it take?', answer: 'Standard service is 48 hours, our popular plan is 24 hours, and for those "OMG I have a meeting" moments, we offer same-day rush service! ⚡', open: false },
-        { question: 'Can I choose my detergent?', answer: 'Absolutely! We offer standard, premium eco-friendly, and hypoallergenic options. Because your clothes (and nose) deserve choices! 🌿', open: false },
-        { question: 'Is there a minimum order?', answer: 'Nope! Whether it\'s one shirt or a mountain of laundry, we\'re happy to help. No judgment on pile size, we promise! 😄', open: false },
+        { question: 'How does pickup & delivery work?', answer: 'Just schedule a pickup through our website or give us a call! Our team arrives at your doorstep, collects your garments, and delivers them back fresh and clean. Zero effort on your end! 🚗', open: false },
+        { question: 'What if my clothes are damaged?', answer: 'We treat every garment with the utmost care. In the extremely rare event of any damage, our garment insurance covers the full cost. Your clothes are safe with us! 🛡️', open: false },
+        { question: 'How long does the service take?', answer: 'Essential plan: 48-hour turnaround. Premium: 24 hours. Signature: Same-day rush option available! Need it faster? Just let us know. ⚡', open: false },
+        { question: 'Can I pick my detergent?', answer: 'Absolutely! We offer standard, premium eco-friendly, and hypoallergenic options. Just tell us your preference when you book! 🌿', open: false },
+        { question: 'Is there a minimum order?', answer: 'Nope! Whether it is a single shirt or a mountain of laundry — we handle it all with the same level of care. 😊', open: false },
     ];
 
-    toggleFaq(index: number) {
-        this.faqs[index].open = !this.faqs[index].open;
-    }
+    toggleFaq(index: number) { this.faqs[index].open = !this.faqs[index].open; }
 
-    ngOnInit() {
-        this.setupScrollAnimations();
-    }
-
-    ngOnDestroy() {
-        if (this.animationObserver) {
-            this.animationObserver.disconnect();
-        }
-    }
+    ngOnInit() { this.setupScrollAnimations(); }
+    ngOnDestroy() { this.animationObserver?.disconnect(); }
 
     setupScrollAnimations() {
         if (typeof IntersectionObserver !== 'undefined') {
             this.animationObserver = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('animate-in');
-                        }
-                    });
-                },
+                (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('animate-in'); }),
                 { threshold: 0.1 }
             );
-
-            setTimeout(() => {
-                document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-                    this.animationObserver?.observe(el);
-                });
-            }, 100);
+            setTimeout(() => document.querySelectorAll('.animate-on-scroll').forEach((el) => this.animationObserver?.observe(el)), 100);
         }
     }
 }
