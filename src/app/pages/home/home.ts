@@ -21,23 +21,23 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     ];
 
     whyUs = [
-        { title: 'Premium Eco Products', desc: 'Gentle on fabrics, tough on stains — and kind to the planet' },
-        { title: 'Lightning Fast Service', desc: '24-hour turnaround so you never run out of clean clothes' },
-        { title: 'Free Pickup & Delivery', desc: 'We come to your door — no trips, no hassle, just fresh clothes' },
-        { title: 'Satisfaction Guaranteed', desc: 'Not happy? We\'ll re-clean for free. No questions asked!' },
+        { title: 'Organic Eco Products', description: 'Gentle on fabrics, tough on stains — and completely safe for your skin and the environment.', icon: '🍃' },
+        { title: 'Master Craftsmanship', description: 'Decades of experience in fabric care, ensuring your designer pieces and delicates are expertly handled.', icon: '✂️' },
+        { title: 'Free Doorstep Service', description: 'We collect and deliver your pristine garments right to your door with zero hassle.', icon: '🚪' },
+        { title: 'Pristine Guarantee', description: 'Absolute satisfaction. If it\'s not perfect, we re-process it complimentary.', icon: '⭐' },
     ];
 
     howItWorks = [
-        { step: '01', title: 'Schedule', description: 'Book a pickup online or call us — takes just 30 seconds!', emoji: '📱' },
-        { step: '02', title: 'We Collect', description: 'Our friendly team picks up your laundry from your doorstep.', emoji: '🚪' },
-        { step: '03', title: 'Expert Care', description: 'Premium cleaning with eco-friendly products & expert handling.', emoji: '✨' },
-        { step: '04', title: 'Fresh Delivery', description: 'Perfectly clean clothes delivered back, neatly folded.', emoji: '🧺' },
+        { step: '01', title: 'Schedule Online', description: 'Book a collection time from your device in under 30 seconds.' },
+        { step: '02', title: 'Concierge Pickup', description: 'Our team collects your garments precisely at your requested time.' },
+        { step: '03', title: 'Master Cleaning', description: 'Your clothes receive meticulous, personalized care and stain treatment.' },
+        { step: '04', title: 'Pristine Delivery', description: 'Garments are delivered back flawlessly folded and ready to wear.' },
     ];
 
     testimonials = [
-        { name: 'Priya S.', text: 'Hey Laundry saved my weekends! My clothes come back smelling amazing and perfectly pressed. Best service ever! 🌸', rating: 5 },
-        { name: 'Rahul M.', text: 'They handle my office shirts perfectly every single time. The express service is a lifesaver for busy mornings!', rating: 5 },
-        { name: 'Ananya K.', text: 'Super affordable and the quality is outstanding. My whites are actually WHITE now! Highly recommend to everyone. 😍', rating: 5 },
+        { name: 'Arjun S.', review: 'The only service I trust with my bespoke suits. Their attention to detail and packaging is genuinely unmatched in Hyderabad.', location: 'Jubilee Hills' },
+        { name: 'Dr. Meera P.', review: 'They handle my silk sarees perfectly. The convenience of free pickup and the quality of dry cleaning is exceptional.', location: 'Banjara Hills' },
+        { name: 'Vikram R.', review: 'Consistent, premium, and flawless. The wash and iron service keeps my work wardrobe crisp all week. Highly recommended.', location: 'HITEC City' },
     ];
 
     ngOnInit() {

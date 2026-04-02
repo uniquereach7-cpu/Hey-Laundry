@@ -1,53 +1,90 @@
-<main id="home-page">
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="hero-section">
-        <div class="hero-bg-glow"></div>
-        <div class="container hero-content">
-            <div class="hero-text">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    #1 Premium Laundry Service
-                </div>
-                <h1>Fresh Clothes,<br /><span class="gradient-text">Zero Hassle.</span></h1>
-                <p class="hero-description">
-                    Say goodbye to laundry stress! We pick up your dirty clothes, give them the premium
-                    treatment, and deliver them fresh & perfectly folded — right to your door.
-                </p>
-                <div class="hero-actions">
-                    <a href="tel:+919876543210" class="btn-primary" id="hero-cta-primary">
-                        📞 Schedule a Pickup
-                    </a>
-                    <a routerLink="/pricing" class="btn-outline" id="hero-cta-secondary">
-                        View Pricing
-                    </a>
-                </div>
-                <div class="hero-trust">
-                    <div class="trust-avatars">
-                        <img src="assets/images/hey4.jpg" alt="Customer" class="trust-img" />
-                        <img src="assets/images/hey5.jpg" alt="Customer" class="trust-img" />
-                        <img src="assets/images/hey6.jpg" alt="Customer" class="trust-img" />
-                    </div>
-                    <span>Loved by <strong>10,000+</strong> happy customers</span>
-                </div>
+<main id="home-page" itemscope itemtype="https://schema.org/LaundryService">
+    <!-- ===== CINEMATIC LUXURY HERO ===== -->
+    <section class="hero-video-wrapper" id="hero-section">
+        <!-- Background Video -->
+        <video #promoVideo autoplay loop muted [muted]="true" playsinline class="hero-bg-video">
+            <source src="assets/images/video.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-video-overlay"></div>
+
+        <div class="container hero-cinematic-content">
+            <div class="hero-badge-premium">
+                <span class="badge-dot-gold"></span>
+                Hyderabad's #1 Luxury Fabric Care
             </div>
-            <div class="hero-visual">
-                <div class="hero-image-wrapper">
-                    <img src="assets/images/hey1.jpg" alt="Hey Laundry - Premium garment care" loading="eager" />
-                    <!-- <div class="hero-float-card card-1">
-                        <span class="card-icon">⚡</span>
-                        <div>
-                            <strong>24hr Delivery</strong>
-                            <small>Express service</small>
-                        </div>
-                    </div> -->
-                    <div class="hero-float-card card-2">
-                        <span class="card-icon">♻️</span>
-                        <div>
-                            <strong>Eco-Friendly</strong>
-                            <small>Green products</small>
-                        </div>
-                    </div>
+
+            <h1 itemprop="name" class="hero-title-massive">
+                The Art of <br />
+                <span class="text-gold-gradient">Pristine Garments</span>
+            </h1>
+
+            <p class="hero-desc-elegant" itemprop="description">
+                Experience meticulous garment care and premium dry cleaning.
+                Free doorstep pickup and express delivery for the discerning few.
+                Your wardrobe deserves nothing less.
+            </p>
+
+            <div class="hero-actions-center">
+                <a href="tel:+919876543210" class="btn-royal" id="hero-cta-primary">
+                    Schedule a Pickup
+                </a>
+                <a routerLink="/services" class="btn-glass" id="hero-cta-secondary">
+                    Discover Services
+                </a>
+            </div>
+
+            <!-- Floating Trust Element -->
+            <!-- <div class="hero-trust-floating">
+                <div class="trust-faces">
+                    <img src="assets/images/hey4.jpg" alt="Premium customer" />
+                    <img src="assets/images/hey5.jpg" alt="Satisfied customer" />
+                    <img src="assets/images/hey7.jpg" alt="Luxury service" />
                 </div>
+                <div class="trust-text">
+                    <strong>Trusted by 10,000+</strong>
+                    <span>Discerning customers across Hyderabad</span>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="scroll-down-indicator">
+            <div class="mouse"></div>
+            <span>Discover</span>
+        </div>
+    </section>
+
+    <!-- ===== LUXURY MARQUEE STRIP ===== -->
+    <section class="marquee-strip" id="marquee-strip">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>Premium Laundry Service</span>
+                <span class="marquee-dot">◆</span>
+                <span>Same Day Dry Cleaning</span>
+                <span class="marquee-dot">◆</span>
+                <span>Free Doorstep Pickup</span>
+                <span class="marquee-dot">◆</span>
+                <span>Eco-Friendly Products</span>
+                <span class="marquee-dot">◆</span>
+                <span>Express Service</span>
+                <span class="marquee-dot">◆</span>
+                <span>Designer Garment Care</span>
+                <span class="marquee-dot">◆</span>
+                <span>Luxury Fabric Specialists</span>
+                <span class="marquee-dot">◆</span>
+                <span>Premium Laundry Service</span>
+                <span class="marquee-dot">◆</span>
+                <span>Same Day Dry Cleaning</span>
+                <span class="marquee-dot">◆</span>
+                <span>Free Doorstep Pickup</span>
+                <span class="marquee-dot">◆</span>
+                <span>Eco-Friendly Products</span>
+                <span class="marquee-dot">◆</span>
+                <span>Express Service</span>
+                <span class="marquee-dot">◆</span>
+                <span>Designer Garment Care</span>
+                <span class="marquee-dot">◆</span>
+                <span>Luxury Fabric Specialists</span>
+                <span class="marquee-dot">◆</span>
             </div>
         </div>
     </section>
@@ -57,7 +94,7 @@
         <div class="container">
             <div class="stats-grid">
                 @for (stat of stats; track stat.label) {
-                <div class="stat-item animate-on-scroll">
+                <div class="stat-item reveal">
                     <span class="stat-number">{{ stat.number }}</span>
                     <span class="stat-label">{{ stat.label }}</span>
                 </div>
@@ -66,138 +103,201 @@
         </div>
     </section>
 
-    <!-- ===== SERVICES PREVIEW ===== -->
-    <section class="services-preview" id="services-preview">
-        <div class="container">
-            <div class="section-divider"></div>
-            <p class="section-label">What We Do</p>
-            <h2 class="section-title animate-on-scroll">Premium Garment Care</h2>
-            <p class="section-subtitle animate-on-scroll">From everyday wear to designer pieces — every garment gets the
-                royal treatment</p>
+    <!-- ===== CREATIVE EXPERTISE: STICKY SCROLL STACK ===== -->
+    <section class="expertise-stack-section" id="services-preview">
+        <div class="container stack-container">
+            <div class="stack-header reveal">
+                <p class="section-label">Our Expertise</p>
+                <h2 class="section-title">Premium Garment Care & <br /><span class="gradient-text">Dry Cleaning</span>
+                </h2>
+                <p class="section-subtitle">
+                    Scroll down to explore our premium fabric care solutions. Each service crafted meticulously for your
+                    lifestyle.
+                </p>
+            </div>
 
-            <div class="services-showcase">
-                <div class="service-card glass-card animate-on-scroll">
-                    <div class="service-img-wrap">
-                        <img src="assets/images/hey3.jpg" alt="Wash & Fold" />
-                    </div>
-                    <div class="service-info">
-                        <h3>Wash & Fold</h3>
-                        <p>Your daily essentials — washed, softened, and perfectly folded</p>
-                        <a routerLink="/services" class="service-link">Learn More →</a>
-                    </div>
-                </div>
-                <div class="service-card glass-card animate-on-scroll">
-                    <div class="service-img-wrap">
-                        <img src="assets/images/hey7.jpg" alt="Wash & Iron" />
-                    </div>
-                    <div class="service-info">
-                        <h3>Wash & Iron</h3>
-                        <p>Crisp, wrinkle-free clothes ready for any occasion</p>
-                        <a routerLink="/services" class="service-link">Learn More →</a>
+            <div class="stacked-cards-wrapper">
+                <!-- Card 1 -->
+                <div class="stack-card card-1" id="stack-wash-fold">
+                    <div class="stack-card-content">
+                        <div class="stack-info">
+                            <span class="stack-number">01</span>
+                            <h3>Wash & Fold</h3>
+                            <p>Daily essentials treated with organic, eco-friendly detergents. Softened, flawlessly
+                                folded, and delivered with immaculate precision.</p>
+                            <span class="stack-tag">Best affordable laundry service near you</span>
+                        </div>
+                        <div class="stack-img">
+                            <img src="assets/images/luxury-linens.png" alt="Premium wash and fold laundry service" />
+                        </div>
                     </div>
                 </div>
-                <div class="service-card glass-card animate-on-scroll">
-                    <div class="service-img-wrap">
-                        <img src="assets/images/hey8.jpg" alt="Dry Cleaning" />
+
+                <!-- Card 2 -->
+                <div class="stack-card card-2" id="stack-wash-iron">
+                    <div class="stack-card-content">
+                        <div class="stack-info">
+                            <span class="stack-number">02</span>
+                            <h3>Wash & Iron</h3>
+                            <p>Crisp, wrinkle-free perfection. Our professional steam ironing service guarantees a
+                                flawless finish for your important events.</p>
+                            <span class="stack-tag">Same-day delivery available in Hyderabad</span>
+                        </div>
+                        <div class="stack-img">
+                            <img src="assets/images/hey7.jpg" alt="Professional wash and iron service" />
+                        </div>
                     </div>
-                    <div class="service-info">
-                        <h3>Dry Cleaning</h3>
-                        <p>Expert care for your premium suits, silks & delicate fabrics</p>
-                        <a routerLink="/services" class="service-link">Learn More →</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="stack-card card-3" id="stack-dry-clean">
+                    <div class="stack-card-content">
+                        <div class="stack-info">
+                            <span class="stack-number">03</span>
+                            <h3>Luxury Dry Cleaning</h3>
+                            <p>The ultimate care for suits, silk sarees, and designer wear. Expert fabric care
+                                specialists ensure color protection and absolute pristine conditions.</p>
+                            <span class="stack-tag">Premium dry cleaners in Hyderabad</span>
+                        </div>
+                        <div class="stack-img">
+                            <img src="assets/images/luxury-drycleaning.png"
+                                alt="Premium dry cleaning service for luxury suits" />
+                        </div>
                     </div>
                 </div>
             </div>
-            <div style="text-align:center; margin-top: 48px;">
-                <a routerLink="/services" class="btn-secondary animate-on-scroll">View All Services</a>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <a routerLink="/services" class="btn-outline">View All Services</a>
             </div>
         </div>
     </section>
 
     <!-- ===== WHY US ===== -->
-    <section class="why-us" id="why-us-section">
+    <section class="why-us" id="why-us">
         <div class="container">
             <div class="why-us-grid">
-                <div class="why-us-visual animate-on-scroll">
-                    <img src="assets/images/hey9.jpg" alt="Premium garment care" loading="lazy" />
+                <div class="why-us-visual reveal-left">
+                    <img src="assets/images/luxury-care.png"
+                        alt="Premium fabric care specialists — eco-friendly luxury garment cleaning in Hyderabad"
+                        loading="eager" fetchpriority="high" />
                     <div class="why-us-badge">
                         <span class="badge-num">99%</span>
                         <span class="badge-text">Satisfaction Rate</span>
                     </div>
                 </div>
-                <div class="why-us-content animate-on-scroll">
+                <div class="why-us-content reveal-right">
                     <p class="section-label">Why Choose Us</p>
-                    <h2 class="why-title">We Don't Just Clean — We <span class="gradient-text">Care.</span></h2>
+                    <h2 class="why-title">Beyond Cleaning — <br /><span class="gradient-text">Luxury Cloth Care.</span>
+                    </h2>
                     <p class="why-description">
-                        Your clothes deserve the best. We use eco-friendly products, expert handling,
-                        and decades of experience to make every garment look and feel brand new.
+                        Your clothes deserve the finest treatment. As Hyderabad's best laundry service,
+                        we use organic, eco-friendly products combined with expert handling and decades
+                        of knowledge to ensure your garments last longer and look pristine.
                     </p>
+
                     <div class="why-features">
-                        @for (item of whyUs; track item.title) {
-                        <div class="why-feature-item">
-                            <div class="why-feature-icon">✓</div>
-                            <div>
-                                <strong>{{ item.title }}</strong>
-                                <p>{{ item.desc }}</p>
+                        @for (feature of whyUs; track feature.title) {
+                        <div class="feature-item">
+                            <span class="feature-icon">{{ feature.icon }}</span>
+                            <div class="feature-text">
+                                <h4>{{ feature.title }}</h4>
+                                <p>{{ feature.description }}</p>
                             </div>
                         </div>
                         }
                     </div>
-                    <a routerLink="/services" class="btn-primary">Explore Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FULL-WIDTH IMAGE BREAK ===== -->
+    <section class="image-break reveal-scale">
+        <div class="image-break-wrapper">
+            <img src="assets/images/hey1.jpg"
+                alt="Premium laundry service in Hyderabad — Hey Laundry facility with professional garment care"
+                loading="eager" fetchpriority="high" />
+            <div class="image-break-overlay">
+                <div class="image-break-content">
+                    <p class="section-label" style="color: var(--gold);">Experience the Difference</p>
+                    <h2>Immaculate precision in every thread.</h2>
+                    <p>Trust Hyderabad's premier dry cleaners.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== HOW IT WORKS ===== -->
-    <section class="how-it-works" id="how-it-works-section">
+    <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-divider"></div>
-            <p class="section-label" style="text-align:center;display:block;">Simple Process</p>
-            <h2 class="section-title animate-on-scroll">How It Works</h2>
-            <p class="section-subtitle animate-on-scroll">Getting fresh, clean clothes has never been this easy!</p>
+            <p class="section-label reveal" style="text-align:center;display:block;">How It Works</p>
+            <h2 class="section-title reveal">Book Your Laundry <span class="gradient-text">Online</span></h2>
+            <p class="section-subtitle reveal">Schedule laundry pickup in 30 seconds. Same day laundry service
+                available. Quick, simple, and effortless!</p>
 
             <div class="steps-grid">
-                @for (step of howItWorks; track step.step) {
-                <div class="step-card glass-card animate-on-scroll">
-                    <div class="step-number">{{ step.step }}</div>
-                    <div class="step-emoji">{{ step.emoji }}</div>
+                @for (step of howItWorks; track step.step; let i = $index) {
+                <div class="step-card reveal-up" [style.transition-delay]="(i * 0.15) + 's'">
+                    <span class="step-number">{{ step.step }}</span>
                     <h3>{{ step.title }}</h3>
                     <p>{{ step.description }}</p>
                 </div>
                 }
             </div>
+        </div>
+    </section>
 
-            <section class="video-section animate-on-scroll">
-                <div class="video-container">
-                    <video #promoVideo autoplay loop muted playsinline class="promo-video">
-                        <source src="assets/images/video.mp4" type="video/mp4" />
-                    </video>
+    <!-- ===== PICKUP & DELIVERY ===== -->
+    <section class="pickup-delivery" id="pickup-delivery">
+        <div class="container">
+            <div class="pickup-grid">
+                <div class="pickup-content reveal-left">
+                    <p class="section-label">Your Convenience</p>
+                    <h2 class="section-title">Free Doorstep <span class="gradient-text">Pickup & Delivery</span></h2>
+                    <p class="pickup-desc">
+                        We respect your time. Enjoy seamless, free doorstep laundry pickup and delivery
+                        across all major areas in Hyderabad. Simply schedule a time, and our expert
+                        team will handle the rest.
+                    </p>
+                    <ul class="pickup-features">
+                        <li class="pickup-feature"><span>✅</span> <p>Available 7 days a week</p></li>
+                        <li class="pickup-feature"><span>✅</span> <p>Express same-day return option</p></li>
+                        <li class="pickup-feature"><span>✅</span> <p>Live order tracking</p></li>
+                    </ul>
+                    <a href="tel:+919876543210" class="btn-primary">Schedule Pickup Now</a>
                 </div>
-            </section>
+                <div class="pickup-visual reveal-right">
+                    <img src="assets/images/luxury-delivery.png"
+                        alt="Free doorstep laundry pickup and delivery service in Hyderabad" loading="eager" fetchpriority="high" />
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- ===== TESTIMONIALS ===== -->
-    <section class="testimonials" id="testimonials-section">
+    <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-divider"></div>
-            <p class="section-label" style="text-align:center;display:block;">Testimonials</p>
-            <h2 class="section-title animate-on-scroll">What Our Customers Say</h2>
-            <p class="section-subtitle animate-on-scroll">Don't just take our word for it — hear from our happy
-                customers!</p>
+            <p class="section-label reveal" style="text-align:center;display:block;">Client Testimonials</p>
+            <h2 class="section-title reveal">What Our <span class="gradient-text">Customers Say</span></h2>
+            <p class="section-subtitle reveal">Rated as the best laundry service near Hyderabad by our valued customers
+            </p>
 
             <div class="testimonial-grid">
-                @for (testimonial of testimonials; track testimonial.name) {
-                <div class="testimonial-card glass-card animate-on-scroll">
+                @for (testimonial of testimonials; track testimonial.name; let i = $index) {
+                <div class="testimonial-card glass-card reveal-up" [style.transition-delay]="(i * 0.1) + 's'">
                     <div class="testimonial-stars">
-                        @for (star of [1,2,3,4,5]; track star) {
-                        <span class="star">★</span>
-                        }
+                        @for (star of [1,2,3,4,5]; track star) { <span class="star">★</span> }
                     </div>
-                    <p class="testimonial-text">"{{ testimonial.text }}"</p>
+                    <p class="testimonial-text">"{{ testimonial.review }}"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">{{ testimonial.name.charAt(0) }}</div>
-                        <span class="author-name">{{ testimonial.name }}</span>
+                        <div>
+                            <span class="author-name">{{ testimonial.name }}</span>
+                            <span class="author-location">{{ testimonial.location }}</span>
+                        </div>
                     </div>
                 </div>
                 }
@@ -206,14 +306,18 @@
     </section>
 
     <!-- ===== CTA ===== -->
-    <section class="cta-section" id="cta-section">
+    <section class="cta-section" id="cta">
         <div class="container">
-            <div class="cta-card animate-on-scroll">
+            <div class="cta-card reveal-scale">
                 <div class="cta-glow"></div>
-                <h2>Ready for Fresh, Clean Clothes? 👋</h2>
-                <p>Join 10,000+ smart people who've already ditched their laundry pile. Your first pickup is on us!</p>
+                <div class="cta-pattern"></div>
+                <p class="section-label cta-label" style="color: var(--gold); text-align:center;display:block;">Get
+                    Started</p>
+                <h2>Ready for Fresh, <span class="gradient-text-gold">Immaculate</span> Clothes?</h2>
+                <p>Join 10,000+ smart people in Hyderabad who've switched to premium laundry service. Book your laundry
+                    service online — free pickup & delivery across Hyderabad.</p>
                 <div class="cta-actions">
-                    <a href="tel:+919876543210" class="btn-primary cta-btn">📞 Schedule a Pickup</a>
+                    <a href="tel:+919876543210" class="btn-primary cta-btn">Schedule a Pickup</a>
                     <a routerLink="/pricing" class="btn-outline cta-btn-sec">See Pricing</a>
                 </div>
             </div>

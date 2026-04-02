@@ -1,76 +1,136 @@
-<main id="services-page">
-    <section class="services-hero" id="services-hero">
-        <div class="hero-glow"></div>
-        <div class="container">
-            <div class="services-hero-content">
-                <div class="hero-badge"><span class="badge-dot"></span> Our Expertise</div>
-                <h1>Our Laundry <span class="gradient-text">Services</span></h1>
-                <p>From everyday essentials to designer garments — we clean it all with expert care and a whole lot of love! 💙</p>
-            </div>
-            <div class="services-hero-illustration">
-                <img src="assets/images/hey2.jpg" alt="Hey Laundry services" loading="eager" />
-            </div>
+<main class="page-services" itemscope itemtype="https://schema.org/WebPageElement">
+    <!-- Hero Header -->
+    <header class="page-hero">
+        <div class="hero-bg" style="background-image: url('assets/images/hey6.jpg');"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center">
+            <h1 class="reveal-up" itemprop="headline">Our <span class="gradient-text-gold">Services</span></h1>
+            <p class="reveal-up reveal-delay-1" itemprop="description">
+                Experience the pinnacle of garment care in Hyderabad. From daily wear to delicate designer pieces, 
+                our master cleaners ensure every thread is treated with absolute perfection.
+            </p>
         </div>
-    </section>
+    </header>
 
-    <section class="services-section" id="all-services">
+    <!-- Detailed Services Offerings -->
+    <section class="services-grid-section">
         <div class="container">
-            <div class="section-divider"></div>
-            <p class="section-label" style="text-align:center;display:block;">What We Offer</p>
-            <h2 class="section-title animate-on-scroll">Everything Your Clothes Need</h2>
-            <p class="section-subtitle animate-on-scroll">Pick a service — we'll make your clothes feel brand new!</p>
             <div class="services-grid">
-                @for (service of services; track service.title) {
-                <div class="service-card glass-card animate-on-scroll">
-                    <div class="service-icon">{{ service.icon }}</div>
-                    <h3>{{ service.title }}</h3>
-                    <p class="service-desc">{{ service.description }}</p>
-                    <ul class="service-features">
-                        @for (feature of service.features; track feature) {
-                        <li><span class="feature-check">✓</span> {{ feature }}</li>
-                        }
-                    </ul>
-                    <a routerLink="/pricing" class="service-cta">See Pricing →</a>
+                
+                <!-- Service 1 -->
+                <article class="service-card reveal-up" itemscope itemtype="https://schema.org/Service">
+                    <meta itemprop="serviceType" content="Wash & Fold">
+                    <div class="card-image">
+                        <img src="assets/images/luxury-linens.png" alt="Premium wash and fold service" itemprop="image"/>
+                        <div class="card-badge">Daily Care</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 itemprop="name">Wash & Fold</h3>
+                        <p itemprop="description">
+                            Our signature daily laundry service. We use eco-friendly solvents and RO purified water to gently wash your everyday garments. Each piece is meticulously folded, perfectly stacked, and delivered wrapped in tissue.
+                        </p>
+                        <div class="card-price">Starting from ₹99 / kg</div>
+                        <ul class="service-features">
+                            <li><span class="check">✓</span> Color segregation</li>
+                            <li><span class="check">✓</span> Gentle tumbling</li>
+                            <li><span class="check">✓</span> Master folding</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Service 2 -->
+                <article class="service-card reveal-up reveal-delay-1" itemscope itemtype="https://schema.org/Service">
+                    <meta itemprop="serviceType" content="Wash & Iron">
+                    <div class="card-image">
+                        <img src="assets/images/hey7.jpg" alt="Wash and steam ironing service" itemprop="image"/>
+                        <div class="card-badge">Crisp Finish</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 itemprop="name">Wash & Iron</h3>
+                        <p itemprop="description">
+                            Experience crisp, flawless garments ready for the office or evening out. After a careful wash, our specialists use state-of-the-art steam presses that protect fibers while eliminating every single wrinkle.
+                        </p>
+                        <div class="card-price">Starting from ₹120 / kg</div>
+                        <ul class="service-features">
+                            <li><span class="check">✓</span> Deep soil extraction</li>
+                            <li><span class="check">✓</span> Hand-finished collars</li>
+                            <li><span class="check">✓</span> Wrinkle-free perfection</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Service 3 -->
+                <article class="service-card reveal-up reveal-delay-2" itemscope itemtype="https://schema.org/Service">
+                    <meta itemprop="serviceType" content="Luxury Dry Cleaning">
+                    <div class="card-image">
+                        <img src="assets/images/luxury-drycleaning.png" alt="Luxury dry cleaning for suits and designer wear" itemprop="image"/>
+                        <div class="card-badge">Premium Care</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 itemprop="name">Luxury Dry Cleaning</h3>
+                        <p itemprop="description">
+                            The ultimate preservation for your most prized wardrobe items. Hand-detailing, sophisticated stain removal, and gentle petroleum-based solvents ensure your suits, silks, and designer items remain immaculate.
+                        </p>
+                        <div class="card-price">Individual Pricing</div>
+                        <ul class="service-features">
+                            <li><span class="check">✓</span> Master stain removal</li>
+                            <li><span class="check">✓</span> Delicate fabric protection</li>
+                            <li><span class="check">✓</span> Luxury packaging</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Service 4 -->
+                <article class="service-card reveal-up" itemscope itemtype="https://schema.org/Service">
+                    <meta itemprop="serviceType" content="Household Linens">
+                    <div class="card-image">
+                        <img src="assets/images/luxury-linens.png" alt="Curtain, blanket and linen cleaning" itemprop="image"/>
+                        <div class="card-badge">Home Refresh</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 itemprop="name">Household Linens</h3>
+                        <p itemprop="description">
+                            Extend the luxury care to your home. We expertly clean bed linens, duvet covers, heavy curtains, and delicate throws. Our process eradicates dust mites and allergens while preserving fabric integrity.
+                        </p>
+                        <div class="card-price">Individual Pricing</div>
+                        <ul class="service-features">
+                            <li><span class="check">✓</span> Allergen removal</li>
+                            <li><span class="check">✓</span> Large-capacity cleaning</li>
+                            <li><span class="check">✓</span> Complete odor neutralization</li>
+                        </ul>
+                    </div>
+                </article>
+
+                 <!-- Service 5 -->
+                 <article class="service-card reveal-up reveal-delay-1" itemscope itemtype="https://schema.org/Service">
+                    <meta itemprop="serviceType" content="Shoe Cleaning">
+                    <div class="card-image">
+                        <img src="assets/images/hey4.jpg" alt="Sneaker and leather shoe cleaning" itemprop="image"/>
+                        <div class="card-badge">Specialist Care</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 itemprop="name">Sneaker & Shoe Rescue</h3>
+                        <p itemprop="description">
+                            Bring your favorite footwear back to life. Whether it's removing scuffs from limited-edition sneakers or conditioning fine leather oxfords, our shoe artisans meticulously deep clean and restore.
+                        </p>
+                        <div class="card-price">Starting from ₹350 / pair</div>
+                        <ul class="service-features">
+                            <li><span class="check">✓</span> Deep sole whitening</li>
+                            <li><span class="check">✓</span> Suede/Leather conditioning</li>
+                            <li><span class="check">✓</span> Deodorizing treatment</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Process Card -->
+                <div class="service-process align-self-center reveal-up reveal-delay-2">
+                    <h3>The Hey Laundry Standard</h3>
+                    <p>Every piece we process passes through our 7-point quality inspection.</p>
+                    <a href="tel:+919876543210" class="btn-royal">Book Collection</a>
                 </div>
-                }
+
             </div>
         </div>
     </section>
 
-    <section class="process-section" id="our-process">
-        <div class="container">
-            <div class="section-divider"></div>
-            <p class="section-label" style="text-align:center;display:block;">Simple Process</p>
-            <h2 class="section-title animate-on-scroll">How We Roll 🫧</h2>
-            <p class="section-subtitle animate-on-scroll">4 simple steps to perfectly clean clothes!</p>
-            <div class="process-timeline">
-                @for (step of process; track step.step) {
-                <div class="process-step glass-card animate-on-scroll">
-                    <div class="process-icon">{{ step.icon }}</div>
-                    <div class="process-number">{{ step.step }}</div>
-                    <h3>{{ step.title }}</h3>
-                    <p>{{ step.desc }}</p>
-                </div>
-                }
-            </div>
-        </div>
-    </section>
-
-    <section class="guarantee-section" id="our-guarantee">
-        <div class="container">
-            <div class="guarantee-card animate-on-scroll">
-                <div class="guarantee-glow"></div>
-                <div class="guarantee-icon">🛡️</div>
-                <h2>Our Satisfaction Guarantee</h2>
-                <p>Not 100% happy? We'll re-clean your clothes for free. No questions asked — just clean clothes and happy vibes!</p>
-                <div class="guarantee-features">
-                    <div class="g-feature"><span>🔄</span><strong>Free Re-wash</strong></div>
-                    <div class="g-feature"><span>💰</span><strong>No Hidden Fees</strong></div>
-                    <div class="g-feature"><span>🌿</span><strong>Eco-Friendly</strong></div>
-                    <div class="g-feature"><span>📞</span><strong>24/7 Support</strong></div>
-                </div>
-                <a href="tel:+919876543210" class="btn-primary" id="guarantee-cta">📞 Schedule a Pickup</a>
-            </div>
-        </div>
-    </section>
 </main>

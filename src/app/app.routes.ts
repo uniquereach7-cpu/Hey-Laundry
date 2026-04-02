@@ -1,13 +1,28 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home';
-import { ServicesComponent } from './pages/services/services';
-import { PricingComponent } from './pages/pricing/pricing';
-import { ContactComponent } from './pages/contact/contact';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent, title: 'Hey Laundry - Premium Laundry & Dry Cleaning Service | Fresh Clothes Delivered' },
-    { path: 'services', component: ServicesComponent, title: 'Our Services - Hey Laundry | Wash, Fold, Iron, Dry Cleaning' },
-    { path: 'pricing', component: PricingComponent, title: 'Pricing - Hey Laundry | Affordable Laundry & Dry Cleaning Rates' },
-    { path: 'contact', component: ContactComponent, title: 'Contact Us - Hey Laundry | Schedule a Pickup Today' },
-    { path: '**', redirectTo: '', pathMatch: 'full' },
+  {
+    path: '',
+    title: 'Hyderabad\'s #1 Luxury Laundry & Dry Cleaning Service | Hey Laundry',
+    loadComponent: () => import('./pages/home/home').then(m => m.HomeComponent)
+  },
+  {
+    path: 'services',
+    title: 'Premium Garment Care & Dry Cleaning Services | Hey Laundry',
+    loadComponent: () => import('./pages/services/services').then(m => m.ServicesComponent)
+  },
+  {
+    path: 'pricing',
+    title: 'Transparent Pricing for Luxury Laundry | Hey Laundry',
+    loadComponent: () => import('./pages/pricing/pricing').then(m => m.PricingComponent)
+  },
+  {
+    path: 'contact',
+    title: 'Contact Our Concierge | Hey Laundry Hyderabad',
+    loadComponent: () => import('./pages/contact/contact').then(m => m.ContactComponent)
+  },
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];

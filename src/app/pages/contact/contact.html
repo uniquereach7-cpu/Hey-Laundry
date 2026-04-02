@@ -1,88 +1,106 @@
-<main id="contact-page">
-    <section class="contact-hero" id="contact-hero">
-        <div class="hero-glow"></div>
-        <div class="container">
-            <div class="hero-badge"><span class="badge-dot"></span> Contact Us</div>
-            <h1>Let's Get Your Laundry <span class="gradient-text">Sorted!</span></h1>
-            <p class="hero-subtitle">Schedule a pickup or just say hello — we'd love to hear from you! 👋</p>
+<main class="page-contact" itemscope itemtype="https://schema.org/ContactPage">
+    <header class="page-hero">
+        <div class="hero-bg" style="background-image: url('assets/images/hey4.jpg');"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center">
+            <h1 class="reveal-up" itemprop="headline">Get In <span class="gradient-text-gold">Touch</span></h1>
+            <p class="reveal-up reveal-delay-1" itemprop="description">
+                Schedule a pickup, request a specialized cleaning consultation, or just say hello. Our concierge team is ready to assist you.
+            </p>
         </div>
-    </section>
+    </header>
 
-    <section class="contact-section" id="contact-form-section">
+    <section class="contact-section">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-form-wrapper glass-card animate-on-scroll">
-                    @if (!isSubmitted) {
-                    <h2>📬 Send Us a Message</h2>
-                    <p class="form-subtitle">Fill in the form and we'll get back to you within 24 hours!</p>
-                    @if (errorMessage) {
-                    <div class="error-alert" id="form-error">⚠️ {{ errorMessage }}</div>
-                    }
-                    <form (ngSubmit)="onSubmit()" id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" [(ngModel)]="formData.name" name="name" placeholder="What's your name?" required />
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" [(ngModel)]="formData.email" name="email" placeholder="your&#64;email.com" required />
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="tel" id="phone" [(ngModel)]="formData.phone" name="phone" placeholder="+91 98765 43210" />
+                
+                <!-- Contact Information -->
+                <div class="contact-info reveal-left">
+                    <p class="section-label">Concierge Service</p>
+                    <h2 class="section-title">We're Here <br/><span class="gradient-text">For You</span></h2>
+                    
+                    <div class="info-blocks">
+                        <div class="info-block">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <p>Banjara Hills, Hyderabad<br/>Telangana, IN 500034</p>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="service">Service Needed</label>
-                            <select id="service" [(ngModel)]="formData.service" name="service">
-                                <option value="">Pick a service</option>
-                                @for (service of services; track service) {
-                                <option [value]="service">{{ service }}</option>
-                                }
-                            </select>
+                        <div class="info-block">
+                            <span class="info-icon">📞</span>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" [(ngModel)]="formData.message" name="message" placeholder="Tell us about your laundry needs..." rows="5" required></textarea>
+                        <div class="info-block">
+                            <span class="info-icon">✉️</span>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p><a href="mailto:hello@heylaundry.in">hello@heylaundry.in</a></p>
+                            </div>
                         </div>
-                        <button type="submit" class="btn-primary submit-btn" [disabled]="isSubmitting" id="submit-btn">
-                            @if (isSubmitting) { <span class="spinner"></span> Sending... } @else { Send Message ✨ }
-                        </button>
-                    </form>
-                    } @else {
-                    <div class="success-message" id="form-success">
-                        <div class="success-icon">🎉</div>
-                        <h2>Message Sent!</h2>
-                        <p>Awesome! We'll get back to you within 24 hours. Keep an eye on your inbox!</p>
-                        <button class="btn-outline" (click)="resetForm()" id="send-another-btn">Send Another Message</button>
                     </div>
-                    }
+
+                    <div class="business-hours mt-40">
+                        <h4>Business Hours</h4>
+                        <p>Our concierge and pickup team is available 7 days a week.</p>
+                        <p class="hours"><strong>Mon - Sun:</strong> 7:00 AM - 9:00 PM</p>
+                    </div>
                 </div>
 
-                <div class="contact-sidebar">
-                    <div class="sidebar-image animate-on-scroll">
-                        <img src="assets/images/hey3.jpg" alt="Hey Laundry" loading="lazy" />
-                    </div>
-                    <div class="contact-info-cards">
-                        @for (info of contactInfo; track info.label) {
-                        <a [href]="info.link" class="info-card glass-card animate-on-scroll">
-                            <span class="info-icon">{{ info.icon }}</span>
-                            <div>
-                                <strong>{{ info.label }}</strong>
-                                <span>{{ info.value }}</span>
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper glass-card reveal-right">
+                    <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" [(ngModel)]="formData.name" required placeholder="John Doe" class="form-control">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" [(ngModel)]="formData.email" required placeholder="john@example.com" class="form-control">
                             </div>
-                        </a>
-                        }
-                    </div>
-                    <div class="sidebar-social animate-on-scroll">
-                        <p>Follow us for laundry tips! 🫧</p>
-                        <a href="https://www.instagram.com/heylaundry" target="_blank" class="ig-link">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                            &#64;heylaundry
-                        </a>
-                    </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" [(ngModel)]="formData.phone" required placeholder="+91 xxxxx xxxxx" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" [(ngModel)]="formData.service" class="form-control">
+                                <option value="Wash & Fold">Wash & Fold</option>
+                                <option value="Wash & Iron">Wash & Iron</option>
+                                <option value="Luxury Dry Cleaning">Luxury Dry Cleaning</option>
+                                <option value="Shoe Cleaning">Shoe Cleaning</option>
+                                <option value="Other">Other Query</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" [(ngModel)]="formData.message" rows="4" required placeholder="How can we help you?" class="form-control"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-royal w-100" [disabled]="isSubmitting || !contactForm.form.valid">
+                            {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+                        </button>
+                        
+                        <!-- Success Message -->
+                        <div class="form-status success" *ngIf="submitStatus === 'success'">
+                            Thank you! Your message has been sent successfully. Our team will contact you shortly.
+                        </div>
+
+                        <!-- Error Message -->
+                        <div class="form-status error" *ngIf="submitStatus === 'error'">
+                            Oops! Something went wrong. Please try again or call us directly.
+                        </div>
+                    </form>
                 </div>
+
             </div>
         </div>
     </section>

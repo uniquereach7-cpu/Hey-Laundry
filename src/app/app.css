@@ -1,0 +1,4 @@
+/* Main app component styles */
+.page-transition-wrapper {
+  animation: fadeIn 0.6s ease-out;
+}
