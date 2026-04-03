@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 @Component({
     selector: 'app-services',
     standalone: true,
-    imports: [RouterLink, CommonModule],
+    imports: [CommonModule],
     templateUrl: './services.html',
     styleUrl: './services.css',
 })

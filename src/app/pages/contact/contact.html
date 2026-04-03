@@ -1,30 +1,19 @@
 <main class="page-contact luxury-theme" itemscope itemtype="https://schema.org/ContactPage">
     <div class="header-spacer"></div>
 
-    <!-- Glossy SEO Hero Section -->
-    <header class="luxury-hero">
-        <div class="hero-bg" style="background-image: url('assets/images/hey4.jpg');"></div>
-        <div class="glass-overlay"></div>
-        <div class="container hero-content text-center">
-            <span class="section-label reveal-up">Exclusive Garment Care</span>
-            <h1 class="reveal-up reveal-delay-1" itemprop="headline">Contact Our <span class="gradient-text-gold">Concierge</span></h1>
-            <p class="reveal-up reveal-delay-2" itemprop="description">
-                Experience the finest luxury laundry service in Hyderabad. Schedule a premium dry cleaning pickup, request bespoke couture care, or consult with our professional garment care experts.
-            </p>
-        </div>
-    </header>
-
     <section class="luxury-contact-section">
         <div class="container">
             <div class="contact-grid">
-                
+
                 <!-- Contact Information & SEO Content -->
                 <div class="contact-info glossy-card reveal-left">
                     <p class="section-label">Reach Out</p>
-                    <h2 class="section-title text-white">We're Here <br/><span class="gradient-text-gold">For You</span></h2>
-                    
+                    <h2 class="section-title text-white">We're Here <br /><span class="gradient-text-gold">For
+                            You</span></h2>
+
                     <div class="seo-text mb-4">
-                        <p>As Hyderabad's premier eco-friendly wash and professional dry cleaners, we ensure your luxury garments receive unparalleled attention.</p>
+                        <p>As Hyderabad's premier eco-friendly wash and professional dry cleaners, we ensure your luxury
+                            garments receive unparalleled attention.</p>
                     </div>
 
                     <div class="info-blocks">
@@ -32,7 +21,7 @@
                             <span class="info-icon">✦</span>
                             <div>
                                 <h4>Visit Us</h4>
-                                <p>Banjara Hills, Hyderabad<br/>Telangana, IN 500034</p>
+                                <p>Banjara Hills, Hyderabad<br />Telangana, IN 500034</p>
                             </div>
                         </div>
                         <div class="info-block">
@@ -63,23 +52,27 @@
                     <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
                         <div class="form-group">
                             <label for="name">Client Name *</label>
-                            <input type="text" id="name" name="name" [(ngModel)]="formData.name" required placeholder="Enter your full name" class="form-control luxury-input">
+                            <input type="text" id="name" name="name" [(ngModel)]="formData.name" required
+                                placeholder="Enter your full name" class="form-control luxury-input">
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" [(ngModel)]="formData.phone" required placeholder="+91 xxxxx xxxxx" class="form-control luxury-input">
+                                <input type="tel" id="phone" name="phone" [(ngModel)]="formData.phone" required
+                                    placeholder="+91 xxxxx xxxxx" class="form-control luxury-input">
                             </div>
                             <div class="form-group">
                                 <label for="email">Email ID *</label>
-                                <input type="email" id="email" name="email" [(ngModel)]="formData.email" required placeholder="your@email.com" class="form-control luxury-input">
+                                <input type="email" id="email" name="email" [(ngModel)]="formData.email" required
+                                    placeholder="your@email.com" class="form-control luxury-input">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="service">Services Opted *</label>
-                            <select id="service" name="service" [(ngModel)]="formData.service" class="form-control luxury-input">
+                            <select id="service" name="service" [(ngModel)]="formData.service"
+                                class="form-control luxury-input">
                                 <option value="Wash & Fold">Wash & Fold</option>
                                 <option value="Wash & Iron">Wash & Iron</option>
                                 <option value="Luxury Dry Cleaning">Luxury Dry Cleaning</option>
@@ -90,13 +83,16 @@
 
                         <div class="form-group">
                             <label for="message">Message (Optional)</label>
-                            <textarea id="message" name="message" [(ngModel)]="formData.message" rows="4" placeholder="Any special instructions for your garments?" class="form-control luxury-input"></textarea>
+                            <textarea id="message" name="message" [(ngModel)]="formData.message" rows="4"
+                                placeholder="Any special instructions for your garments?"
+                                class="form-control luxury-input"></textarea>
                         </div>
 
-                        <button type="submit" class="btn-gold w-100 mt-4" [disabled]="isSubmitting || !contactForm.form.valid">
+                        <button type="submit" class="btn-gold w-100 mt-4"
+                            [disabled]="isSubmitting || !contactForm.form.valid">
                             {{ isSubmitting ? 'Sending Request...' : 'Submit Request' }}
                         </button>
-                        
+
                         <!-- Success Message -->
                         <div class="form-status success" *ngIf="submitStatus === 'success'">
                             Thank you! Your request has been securely transmitted to our concierge.
@@ -110,6 +106,20 @@
                 </div>
 
             </div>
+
+            <!-- Enhanced Location Map Section -->
+            <div class="map-container glossy-card premium-border reveal-up mt-4">
+                <div class="pkg-header text-center mb-4">
+                    <p class="section-label">Find Us</p>
+                    <h3 class="gradient-text-gold">Our Flagship Location</h3>
+                </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15226.790518779!2d78.43572885!3d17.4146194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb973eebf7000b%3A0x1daea6c8ac576d21!2sBanjara%20Hills%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1704285124068!5m2!1sen!2sin"
+                    width="100%" height="400" style="border:0; border-radius: var(--radius-md); opacity: 0.9;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
         </div>
     </section>
 </main>
