@@ -1,102 +1,110 @@
-<main class="page-contact" itemscope itemtype="https://schema.org/ContactPage">
-    <header class="page-hero">
+<main class="page-contact luxury-theme" itemscope itemtype="https://schema.org/ContactPage">
+    <div class="header-spacer"></div>
+
+    <!-- Glossy SEO Hero Section -->
+    <header class="luxury-hero">
         <div class="hero-bg" style="background-image: url('assets/images/hey4.jpg');"></div>
-        <div class="hero-overlay"></div>
+        <div class="glass-overlay"></div>
         <div class="container hero-content text-center">
-            <h1 class="reveal-up" itemprop="headline">Get In <span class="gradient-text-gold">Touch</span></h1>
-            <p class="reveal-up reveal-delay-1" itemprop="description">
-                Schedule a pickup, request a specialized cleaning consultation, or just say hello. Our concierge team is ready to assist you.
+            <span class="section-label reveal-up">Exclusive Garment Care</span>
+            <h1 class="reveal-up reveal-delay-1" itemprop="headline">Contact Our <span class="gradient-text-gold">Concierge</span></h1>
+            <p class="reveal-up reveal-delay-2" itemprop="description">
+                Experience the finest luxury laundry service in Hyderabad. Schedule a premium dry cleaning pickup, request bespoke couture care, or consult with our professional garment care experts.
             </p>
         </div>
     </header>
 
-    <section class="contact-section">
+    <section class="luxury-contact-section">
         <div class="container">
             <div class="contact-grid">
                 
-                <!-- Contact Information -->
-                <div class="contact-info reveal-left">
-                    <p class="section-label">Concierge Service</p>
-                    <h2 class="section-title">We're Here <br/><span class="gradient-text">For You</span></h2>
+                <!-- Contact Information & SEO Content -->
+                <div class="contact-info glossy-card reveal-left">
+                    <p class="section-label">Reach Out</p>
+                    <h2 class="section-title text-white">We're Here <br/><span class="gradient-text-gold">For You</span></h2>
                     
+                    <div class="seo-text mb-4">
+                        <p>As Hyderabad's premier eco-friendly wash and professional dry cleaners, we ensure your luxury garments receive unparalleled attention.</p>
+                    </div>
+
                     <div class="info-blocks">
                         <div class="info-block">
-                            <span class="info-icon">📍</span>
+                            <span class="info-icon">✦</span>
                             <div>
                                 <h4>Visit Us</h4>
                                 <p>Banjara Hills, Hyderabad<br/>Telangana, IN 500034</p>
                             </div>
                         </div>
                         <div class="info-block">
-                            <span class="info-icon">📞</span>
+                            <span class="info-icon">✦</span>
                             <div>
                                 <h4>Call Us</h4>
-                                <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                                <p><a href="tel:+919876543210" class="text-gold">+91 98765 43210</a></p>
                             </div>
                         </div>
                         <div class="info-block">
-                            <span class="info-icon">✉️</span>
+                            <span class="info-icon">✦</span>
                             <div>
                                 <h4>Email Us</h4>
-                                <p><a href="mailto:hello@heylaundry.in">hello@heylaundry.in</a></p>
+                                <p><a href="mailto:hello@heylaundry.in" class="text-gold">hello@heylaundry.in</a></p>
                             </div>
                         </div>
                     </div>
 
                     <div class="business-hours mt-40">
-                        <h4>Business Hours</h4>
-                        <p>Our concierge and pickup team is available 7 days a week.</p>
-                        <p class="hours"><strong>Mon - Sun:</strong> 7:00 AM - 9:00 PM</p>
+                        <h4>Concierge Hours</h4>
+                        <p>Our premium pickup team is available 7 days a week.</p>
+                        <p class="hours text-gold"><strong>Mon - Sun:</strong> 7:00 AM - 9:00 PM</p>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="contact-form-wrapper glass-card reveal-right">
+                <div class="contact-form-wrapper glossy-card premium-border reveal-right">
                     <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" [(ngModel)]="formData.name" required placeholder="John Doe" class="form-control">
+                            <label for="name">Client Name *</label>
+                            <input type="text" id="name" name="name" [(ngModel)]="formData.name" required placeholder="Enter your full name" class="form-control luxury-input">
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" [(ngModel)]="formData.email" required placeholder="john@example.com" class="form-control">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" [(ngModel)]="formData.phone" required placeholder="+91 xxxxx xxxxx" class="form-control luxury-input">
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" [(ngModel)]="formData.phone" required placeholder="+91 xxxxx xxxxx" class="form-control">
+                                <label for="email">Email ID *</label>
+                                <input type="email" id="email" name="email" [(ngModel)]="formData.email" required placeholder="your@email.com" class="form-control luxury-input">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" name="service" [(ngModel)]="formData.service" class="form-control">
+                            <label for="service">Services Opted *</label>
+                            <select id="service" name="service" [(ngModel)]="formData.service" class="form-control luxury-input">
                                 <option value="Wash & Fold">Wash & Fold</option>
                                 <option value="Wash & Iron">Wash & Iron</option>
                                 <option value="Luxury Dry Cleaning">Luxury Dry Cleaning</option>
-                                <option value="Shoe Cleaning">Shoe Cleaning</option>
-                                <option value="Other">Other Query</option>
+                                <option value="Couture Service">Couture Garment Care</option>
+                                <option value="Other">Other Consultation</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" [(ngModel)]="formData.message" rows="4" required placeholder="How can we help you?" class="form-control"></textarea>
+                            <label for="message">Message (Optional)</label>
+                            <textarea id="message" name="message" [(ngModel)]="formData.message" rows="4" placeholder="Any special instructions for your garments?" class="form-control luxury-input"></textarea>
                         </div>
 
-                        <button type="submit" class="btn-royal w-100" [disabled]="isSubmitting || !contactForm.form.valid">
-                            {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+                        <button type="submit" class="btn-gold w-100 mt-4" [disabled]="isSubmitting || !contactForm.form.valid">
+                            {{ isSubmitting ? 'Sending Request...' : 'Submit Request' }}
                         </button>
                         
                         <!-- Success Message -->
                         <div class="form-status success" *ngIf="submitStatus === 'success'">
-                            Thank you! Your message has been sent successfully. Our team will contact you shortly.
+                            Thank you! Your request has been securely transmitted to our concierge.
                         </div>
 
                         <!-- Error Message -->
                         <div class="form-status error" *ngIf="submitStatus === 'error'">
-                            Oops! Something went wrong. Please try again or call us directly.
+                            An error occurred. Please try again or contact us directly.
                         </div>
                     </form>
                 </div>

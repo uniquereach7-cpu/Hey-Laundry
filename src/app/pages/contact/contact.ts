@@ -20,7 +20,7 @@ export class ContactComponent {
   };
 
   isSubmitting = false;
-  submitStatus: 'idle' | 'success' | 'error' = 'idle';
+  submitStatus: string = 'idle';
 
   async onSubmit() {
     this.isSubmitting = true;
