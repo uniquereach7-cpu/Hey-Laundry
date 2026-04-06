@@ -89,25 +89,13 @@
         </div>
     </section>
 
-    <!-- ===== STATS STRIP ===== -->
-    <section class="stats-strip" id="stats-strip">
-        <div class="container">
-            <div class="stats-grid">
-                @for (stat of stats; track stat.label) {
-                <div class="stat-item reveal">
-                    <span class="stat-number">{{ stat.number }}</span>
-                    <span class="stat-label">{{ stat.label }}</span>
-                </div>
-                }
-            </div>
-        </div>
-    </section>
+
 
     <!-- ===== CREATIVE EXPERTISE: STICKY SCROLL STACK ===== -->
     <section class="expertise-stack-section" id="services-preview">
         <div class="container stack-container">
             <div class="stack-header reveal">
-                <p class="section-label">Our Expertise</p>
+                <p class="section-label">Our Categories</p>
                 <h2 class="section-title">Premium Garment Care & <br /><span class="gradient-text">Dry Cleaning</span>
                 </h2>
                 <p class="section-subtitle">
@@ -122,7 +110,7 @@
                     <div class="stack-card-content">
                         <div class="stack-info">
                             <span class="stack-number">01</span>
-                            <h3>Wash & Fold</h3>
+                            <h3>Luxury Brands</h3>
                             <p>Daily essentials treated with organic, eco-friendly detergents. Softened, flawlessly
                                 folded, and delivered with immaculate precision.</p>
                             <span class="stack-tag">Best affordable laundry service near you</span>
@@ -138,7 +126,7 @@
                     <div class="stack-card-content">
                         <div class="stack-info">
                             <span class="stack-number">02</span>
-                            <h3>Wash & Iron</h3>
+                            <h3>Designer & Ethnic Wear</h3>
                             <p>Crisp, wrinkle-free perfection. Our professional steam ironing service guarantees a
                                 flawless finish for your important events.</p>
                             <span class="stack-tag">Same-day delivery available in Hyderabad</span>
@@ -154,7 +142,24 @@
                     <div class="stack-card-content">
                         <div class="stack-info">
                             <span class="stack-number">03</span>
-                            <h3>Luxury Dry Cleaning</h3>
+                            <h3>Office & Daily Wear</h3>
+                            <p>The ultimate care for suits, silk sarees, and designer wear. Expert fabric care
+                                specialists ensure color protection and absolute pristine conditions.</p>
+                            <span class="stack-tag">Premium dry cleaners in Hyderabad</span>
+                        </div>
+                        <div class="stack-img">
+                            <img src="assets/images/luxury-drycleaning.png"
+                                alt="Premium dry cleaning service for luxury suits" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="stack-card card-3" id="stack-dry-clean">
+                    <div class="stack-card-content">
+                        <div class="stack-info">
+                            <span class="stack-number">04</span>
+                            <h3>Curtains & Home Linen</h3>
                             <p>The ultimate care for suits, silk sarees, and designer wear. Expert fabric care
                                 specialists ensure color protection and absolute pristine conditions.</p>
                             <span class="stack-tag">Premium dry cleaners in Hyderabad</span>
@@ -168,7 +173,7 @@
             </div>
 
             <div style="text-align: center; margin-top: 20px;">
-                <a routerLink="/services" class="btn-outline">View All Services</a>
+                <a routerLink="/categories" class="btn-outline">View All Categories</a>
             </div>
         </div>
     </section>
@@ -262,15 +267,22 @@
                         team will handle the rest.
                     </p>
                     <ul class="pickup-features">
-                        <li class="pickup-feature"><span>✅</span> <p>Available 7 days a week</p></li>
-                        <li class="pickup-feature"><span>✅</span> <p>Express same-day return option</p></li>
-                        <li class="pickup-feature"><span>✅</span> <p>Live order tracking</p></li>
+                        <li class="pickup-feature"><span>✅</span>
+                            <p>Available 7 days a week</p>
+                        </li>
+                        <li class="pickup-feature"><span>✅</span>
+                            <p>Express same-day return option</p>
+                        </li>
+                        <li class="pickup-feature"><span>✅</span>
+                            <p>Live order tracking</p>
+                        </li>
                     </ul>
                     <a href="tel:+919876543210" class="btn-primary">Schedule Pickup Now</a>
                 </div>
                 <div class="pickup-visual reveal-right">
                     <img src="assets/images/luxury-delivery.png"
-                        alt="Free doorstep laundry pickup and delivery service in Hyderabad" loading="eager" fetchpriority="high" />
+                        alt="Free doorstep laundry pickup and delivery service in Hyderabad" loading="eager"
+                        fetchpriority="high" />
                 </div>
             </div>
         </div>
@@ -304,7 +316,19 @@
             </div>
         </div>
     </section>
-
+    <!-- ===== STATS STRIP ===== -->
+    <section class="stats-strip" id="stats-strip">
+        <div class="container">
+            <div class="stats-grid">
+                @for (stat of stats; track stat.label) {
+                <div class="stat-item reveal">
+                    <span class="stat-number">{{ stat.number }}</span>
+                    <span class="stat-label">{{ stat.label }}</span>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
     <!-- ===== CTA ===== -->
     <section class="cta-section" id="cta">
         <div class="container">

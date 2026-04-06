@@ -12,6 +12,11 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/services/services').then(m => m.ServicesComponent)
   },
   {
+    path: 'categories',
+    title: 'Garment Categories & Service Types | Hey Laundry Hyderabad',
+    loadComponent: () => import('./pages/categories/categories').then(m => m.CategoriesComponent)
+  },
+  {
     path: 'pricing',
     title: 'Transparent Pricing for Luxury Laundry | Hey Laundry',
     loadComponent: () => import('./pages/pricing/pricing').then(m => m.PricingComponent)

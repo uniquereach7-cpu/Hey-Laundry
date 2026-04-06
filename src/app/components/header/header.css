@@ -63,7 +63,7 @@ header.scrolled {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 150px;
+    gap: 30px;
     height: 68px;
 }
 
@@ -293,4 +293,69 @@ header.scrolled {
     .mobile-nav {
         display: flex;
     }
+}
+
+/* ========================================
+   Desktop Dropdown Menu
+   ======================================== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Invisible bridge so the mouse doesn't lose hover when moving to the menu */
+.dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 15px);
+    /* Position slightly below */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(8, 36, 61, 0.1);
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+
+    /* Animation initial state */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+}
+
+/* Show menu on hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Dropdown Link Styles */
+.dropdown-menu a {
+    padding: 12px 16px;
+    border-radius: 12px;
+    text-align: left;
+    width: 100%;
+    font-size: 0.85rem;
+    margin: 2px 0;
+    font-weight: 600;
+}
+
+.dropdown-menu a:hover {
+    background: var(--gold-lighter, rgba(242, 188, 96, 0.15));
+    color: var(--navy);
 }

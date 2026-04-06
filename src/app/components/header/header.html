@@ -6,12 +6,24 @@
     <header [class.scrolled]="isScrolled" id="main-header">
         <div class="header-container">
             <nav class="desktop-nav" id="desktop-navigation">
-                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-                    id="nav-home">Home</a>
-                <a routerLink="/services" routerLinkActive="active" id="nav-services">Services</a>
-                <a routerLink="/pricing" routerLinkActive="active" id="nav-pricing">Pricing</a>
-                <a routerLink="/contact" routerLinkActive="active" id="nav-contact">Contact</a>
-            </nav>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        id="nav-home">Home</a>
+    
+    <div class="dropdown">
+        <a routerLink="/services" routerLinkActive="active" id="nav-services">Services</a>
+        <div class="dropdown-menu">
+            <a routerLink="/services/premium-dry-cleaning">Premium Dry Cleaning</a>
+            <a routerLink="/services/premium-laundry">Premium Laundry</a>
+            <a routerLink="/services/steam-press-only">Steam Press Only</a>
+            <a routerLink="/services/wash-and-iron">Wash & Iron</a>
+            <a routerLink="/services/wash-and-fold">Wash & Fold</a>
+        </div>
+    </div>
+
+    <a routerLink="/categories" routerLinkActive="active" id="nav-categories">Categories</a>
+    <a routerLink="/pricing" routerLinkActive="active" id="nav-pricing">Pricing</a>
+    <a routerLink="/contact" routerLinkActive="active" id="nav-contact">Contact</a>
+</nav>
 
             <div class="header-right">
                 <a href="https://www.instagram.com/heylaundryhyd" target="_blank" class="header-social"
@@ -43,6 +55,8 @@
                 (click)="closeMobileMenu()" id="mobile-nav-home">Home</a>
             <a routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()"
                 id="mobile-nav-services">Services</a>
+            <a routerLink="/categories" routerLinkActive="active" (click)="closeMobileMenu()"
+                id="mobile-nav-categories">Categories</a>
             <a routerLink="/pricing" routerLinkActive="active" (click)="closeMobileMenu()"
                 id="mobile-nav-pricing">Pricing</a>
             <a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()"
