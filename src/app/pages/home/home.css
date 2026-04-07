@@ -352,6 +352,91 @@
     text-transform: uppercase;
 }
 
+/* ===== HOME SERVICES GRID (5 CARDS) ===== */
+.home-services-section {
+    padding: var(--section-padding);
+    background: var(--bg-primary);
+}
+
+.services-grid-5 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.service-card-compact {
+    width: calc(33.333% - 20px);
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(8, 36, 61, 0.04);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card-compact:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(242, 188, 96, 0.2);
+}
+
+.card-img-wrap {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.service-card-compact:hover .card-img-wrap img {
+    transform: scale(1.05);
+}
+
+.service-card-body {
+    padding: 30px 24px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-card-body h3 {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+    color: var(--navy);
+}
+
+.service-card-body p {
+    font-size: 0.95rem;
+    color: var(--warm-500);
+    line-height: 1.6;
+}
+
+/* Specific styling for the last 2 items so they stretch slightly if needed, or stay centered */
+/* Justify-content: center handles the centering. We want the sizing to remain the same. */
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .service-card-compact {
+        width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card-compact {
+        width: 100%;
+    }
+}
+
 /* ===== CREATIVE EXPERTISE: STICKY SCROLL STACK ===== */
 .expertise-stack-section {
     padding: var(--section-padding);
@@ -648,124 +733,118 @@
     letter-spacing: 0.02em;
 }
 
-/* ===== HOW IT WORKS ===== */
+/* ===== HOW IT WORKS - JOURNEY ===== */
 .how-it-works {
     padding: var(--section-padding);
     background: var(--bg-secondary);
 }
 
-.steps-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-top: 64px;
-}
-
-.step-card {
-    background: var(--white);
-    padding: 48px 40px;
-    border-radius: var(--radius-xl);
+/* ===== TREASURE MAP JOURNEY ===== */
+.treasure-map-journey {
     position: relative;
-    transition: all var(--transition-normal);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(8, 36, 61, 0.03);
+    max-width: 1200px;
+    margin: 80px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.step-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-}
-
-.step-number {
+/* A horizontal dashed line running behind them */
+.treasure-map-journey::before {
+    content: '';
     position: absolute;
-    top: -24px;
-    left: 40px;
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-    color: var(--navy);
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.2rem;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 3px;
+    border-top: 3px dashed var(--gold);
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.t-node {
+    width: 18%;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* The UP / DOWN stagger effect */
+.t-node:nth-child(even) {
+    transform: translateY(40px);
+}
+
+.t-node:nth-child(odd) {
+    transform: translateY(-40px);
+}
+
+/* Image/Icon container */
+.t-node-visual {
+    width: 130px;
+    height: 130px;
+    background: var(--white);
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    box-shadow: var(--shadow-gold);
-}
-
-.step-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 16px;
-    margin-top: 10px;
-}
-
-.step-card p {
-    font-size: 0.95rem;
-    color: var(--warm-500);
-    line-height: 1.7;
-}
-
-/* ===== PICKUP & DELIVERY ===== */
-.pickup-delivery {
-    padding: var(--section-padding);
-    background: var(--white);
-}
-
-.pickup-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.pickup-visual {
-    border-radius: var(--radius-2xl);
-    overflow: hidden;
     position: relative;
+    border: 4px solid var(--white);
+    margin-bottom: 24px;
+    transition: transform 0.4s ease;
+}
+
+.t-node:hover .t-node-visual {
+    transform: scale(1.08) rotate(3deg);
+    border-color: rgba(242, 188, 96, 0.4);
     box-shadow: var(--shadow-xl);
 }
 
-.pickup-visual img {
+.t-node-visual img {
     width: 100%;
-    height: 540px;
-    object-fit: cover;
-    transition: transform var(--transition-slow);
+    height: 90%;
+    object-fit: scale-down;
+    border-radius: 50%;
 }
 
-.pickup-visual:hover img {
-    transform: scale(1.05);
+.t-icon {
+    font-size: 3rem;
 }
 
-.pickup-desc {
-    font-size: 1.05rem;
-    color: var(--warm-500);
-    line-height: 1.8;
-    margin-bottom: 32px;
-}
-
-.pickup-features {
-    list-style: none;
-    margin-bottom: 40px;
+/* Number badge */
+.t-badge {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--navy-dark);
+    font-weight: 800;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--white);
+    box-shadow: var(--shadow-sm);
 }
 
-.pickup-feature {
-    display: flex;
-    align-items: flex-start;
+.t-node-content h3 {
+    font-size: 1.25rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+    font-family: var(--font-heading);
 }
 
-.pickup-feature>span {
-    font-size: 1.4rem;
-    margin-top: 2px;
-}
-
-.pickup-feature p {
-    font-size: 0.82rem;
+.t-node-content p {
+    font-size: 0.95rem;
     color: var(--warm-500);
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 /* ===== TESTIMONIALS ===== */
@@ -949,10 +1028,6 @@
         font-size: 2.4rem;
     }
 
-    .pickup-grid {
-        gap: 60px;
-    }
-
     .stack-card-content {
         gap: 40px;
         padding: 40px;
@@ -1061,16 +1136,50 @@
         font-size: 2rem;
     }
 
-    .steps-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .treasure-map-journey {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        padding-left: 20px;
+        margin: 40px auto;
     }
 
-    .pickup-grid {
-        grid-template-columns: 1fr;
+    .treasure-map-journey::before {
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        right: auto;
+        height: auto;
+        width: 3px;
+        border-top: none;
+        border-left: 3px dashed var(--gold);
+        transform: none;
     }
 
-    .pickup-visual img {
-        height: 320px;
+    .t-node,
+    .t-node:nth-child(even),
+    .t-node:nth-child(odd) {
+        width: 100%;
+        transform: none;
+        flex-direction: row;
+        text-align: left;
+        gap: 24px;
+        margin-bottom: 20px;
+    }
+
+    .t-node-visual {
+        margin-bottom: 0;
+        width: 100px;
+        height: 100px;
+        flex-shrink: 0;
+    }
+
+    .t-icon {
+        font-size: 2.2rem;
+    }
+
+    .t-node-content h3 {
+        font-size: 1.3rem;
     }
 
     .testimonial-grid {

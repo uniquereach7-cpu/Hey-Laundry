@@ -91,8 +91,83 @@
 
 
 
+    <!-- ===== OUR SERVICES ===== -->
+    <section class="home-services-section" id="home-services">
+        <div class="container">
+            <div class="stack-header reveal" style="text-align: center; margin-bottom: 50px;">
+                <p class="section-label">Our Services</p>
+                <h2 class="section-title">Premium <span class="gradient-text">Care Services</span></h2>
+                <p class="section-subtitle">
+                    Experience unmatched quality and precision. We treat every garment with the respect it deserves,
+                    from delicate couture to everyday essentials.
+                </p>
+            </div>
+
+            <div class="services-grid-5">
+                <!-- Service 1: Premium Dry Cleaning -->
+                <div class="service-card-compact reveal-up delay-0">
+                    <div class="card-img-wrap">
+                        <img src="assets/images/luxury-drycleaning.png" alt="Premium Dry Cleaning">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Premium Dry Cleaning</h3>
+                        <p>Specialized care for suits, silks, and designer items using eco-solvents.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2: Premium Laundry -->
+                <div class="service-card-compact reveal-up delay-1">
+                    <div class="card-img-wrap">
+                        <img src="assets/images/hey2.jpg" alt="Premium Laundry">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Premium Laundry</h3>
+                        <p>Elevated daily care with RO water and color-safe technology.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3: Steam Press Only -->
+                <div class="service-card-compact reveal-up delay-2">
+                    <div class="card-img-wrap">
+                        <img src="assets/images/hey9.jpg" alt="Steam Press Only">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Steam Press Only</h3>
+                        <p>Wrinkle-free perfection using advanced Italian contact-less steam presses.</p>
+                    </div>
+                </div>
+
+                <!-- Service 4: Wash & Iron -->
+                <div class="service-card-compact reveal-up delay-3">
+                    <div class="card-img-wrap">
+                        <img src="assets/images/hey7.jpg" alt="Wash & Iron">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Wash & Iron</h3>
+                        <p>Deep cleaning followed by expert ironing for a sharp boardroom-ready finish.</p>
+                    </div>
+                </div>
+
+                <!-- Service 5: Wash & Fold -->
+                <div class="service-card-compact reveal-up delay-4">
+                    <div class="card-img-wrap">
+                        <img src="assets/images/luxury-linens.png" alt="Wash & Fold">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Wash & Fold</h3>
+                        <p>Everyday laundry, neatly washed, masterfully folded, and beautifully delivered.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a routerLink="/services" class="btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== CREATIVE EXPERTISE: STICKY SCROLL STACK ===== -->
-    <section class="expertise-stack-section" id="services-preview">
+    <section class="expertise-stack-section" id="categories-preview">
         <div class="container stack-container">
             <div class="stack-header reveal">
                 <p class="section-label">Our Categories</p>
@@ -218,7 +293,7 @@
     </section>
 
     <!-- ===== FULL-WIDTH IMAGE BREAK ===== -->
-    <section class="image-break reveal-scale">
+    <!-- <section class="image-break reveal-scale">
         <div class="image-break-wrapper">
             <img src="assets/images/hey1.jpg"
                 alt="Premium laundry service in Hyderabad — Hey Laundry facility with professional garment care"
@@ -231,7 +306,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- ===== HOW IT WORKS ===== -->
     <section class="how-it-works" id="how-it-works">
@@ -239,54 +314,89 @@
             <div class="section-divider"></div>
             <p class="section-label reveal" style="text-align:center;display:block;">How It Works</p>
             <h2 class="section-title reveal">Book Your Laundry <span class="gradient-text">Online</span></h2>
-            <p class="section-subtitle reveal">Schedule laundry pickup in 30 seconds. Same day laundry service
-                available. Quick, simple, and effortless!</p>
+            <p class="section-subtitle reveal">
+                Schedule laundry pickup in 30 seconds. Same day laundry service
+                available. Quick, simple, and effortless!
+            </p>
 
-            <div class="steps-grid">
-                @for (step of howItWorks; track step.step; let i = $index) {
-                <div class="step-card reveal-up" [style.transition-delay]="(i * 0.15) + 's'">
-                    <span class="step-number">{{ step.step }}</span>
-                    <h3>{{ step.title }}</h3>
-                    <p>{{ step.description }}</p>
+            <div class="treasure-map-journey">
+
+                <!-- Step 1 -->
+                <div class="t-node reveal-up">
+                    <div class="t-node-visual">
+                        <img src="assets/images/pickup.jpeg" loading="lazy" alt="Pickup">
+                        <div class="t-badge">01</div>
+                    </div>
+                    <div class="t-node-content">
+                        <h3>Pickup</h3>
+                        <p>Valet collection.</p>
+                    </div>
                 </div>
-                }
+
+                <!-- Step 2 -->
+                <div class="t-node reveal-up delay-1">
+                    <div class="t-node-visual">
+                        <img src="assets/images/inspection.jpeg" loading="lazy" alt="Inspection">
+                        <div class="t-badge">02</div>
+                    </div>
+                    <div class="t-node-content">
+                        <h3>Inspection</h3>
+                        <p>Inspection</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="t-node reveal-up delay-2">
+                    <div class="t-node-visual">
+                        <img src="assets/images/stain-mapping.jpeg" loading="lazy" alt="Cleaning">
+                        <div class="t-badge">03</div>
+                    </div>
+                    <div class="t-node-content">
+                        <h3>Stain Mapping</h3>
+                        <p>Fabric wash.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="t-node reveal-up delay-3">
+                    <div class="t-node-visual">
+                        <img src="assets/images/fabric-safe-cleaning.jpeg" loading="lazy" alt="Finishing">
+                        <div class="t-badge">04</div>
+                    </div>
+                    <div class="t-node-content">
+                        <h3>Fabric Safe Cleaning</h3>
+                        <p>Steam & QC.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="t-node reveal-up delay-4">
+                    <div class="t-node-visual">
+                        <img src="assets/images/steaming.jpeg" loading="lazy" alt="Dropoff">
+                        <div class="t-badge">05</div>
+                    </div>
+                    <div class="t-node-content">
+                        <h3>Finishing and Steaming</h3>
+                        <p>Pristine return.</p>
+                    </div>
+                </div>
+                <!-- Step 6 -->
+                <div class="t-node reveal-up delay-4">
+                    <div class="t-node-visual">
+                        <img src="assets/images/packing-delivery.jpeg" loading="lazy" alt="Dropoff">
+                        <div class="t-badge">06</div>
+                    </div>
+                    <div class="t-node-content">
+                        <h3>Packing and Delivery</h3>
+                        <p>Pristine return.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ===== PICKUP & DELIVERY ===== -->
-    <section class="pickup-delivery" id="pickup-delivery">
-        <div class="container">
-            <div class="pickup-grid">
-                <div class="pickup-content reveal-left">
-                    <p class="section-label">Your Convenience</p>
-                    <h2 class="section-title">Free Doorstep <span class="gradient-text">Pickup & Delivery</span></h2>
-                    <p class="pickup-desc">
-                        We respect your time. Enjoy seamless, free doorstep laundry pickup and delivery
-                        across all major areas in Hyderabad. Simply schedule a time, and our expert
-                        team will handle the rest.
-                    </p>
-                    <ul class="pickup-features">
-                        <li class="pickup-feature"><span>✅</span>
-                            <p>Available 7 days a week</p>
-                        </li>
-                        <li class="pickup-feature"><span>✅</span>
-                            <p>Express same-day return option</p>
-                        </li>
-                        <li class="pickup-feature"><span>✅</span>
-                            <p>Live order tracking</p>
-                        </li>
-                    </ul>
-                    <a href="tel:+919876543210" class="btn-primary">Schedule Pickup Now</a>
-                </div>
-                <div class="pickup-visual reveal-right">
-                    <img src="assets/images/luxury-delivery.png"
-                        alt="Free doorstep laundry pickup and delivery service in Hyderabad" loading="eager"
-                        fetchpriority="high" />
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- ===== TESTIMONIALS ===== -->
     <section class="testimonials" id="testimonials">
