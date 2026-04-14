@@ -14,17 +14,17 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     private animationObserver: IntersectionObserver | null = null;
 
     stats = [
-        { number: '10,000+', label: 'Happy Customers' },
-        { number: '50,000+', label: 'Garments Cleaned' },
+        { number: '1,000+', label: 'Happy Customers' },
+        { number: '5⭐', label: 'Rated On Google' },
         { number: '99%', label: 'Satisfaction Rate' },
         { number: '24hr', label: 'Turnaround Time' },
     ];
 
     whyUs = [
-        { title: 'Organic Eco Products', description: 'Gentle on fabrics, tough on stains — and completely safe for your skin and the environment.', icon: '🍃' },
-        { title: 'Master Craftsmanship', description: 'Decades of experience in fabric care, ensuring your designer pieces and delicates are expertly handled.', icon: '✂️' },
-        { title: 'Free Doorstep Service', description: 'We collect and deliver your pristine garments right to your door with zero hassle.', icon: '🚪' },
-        { title: 'Pristine Guarantee', description: 'Absolute satisfaction. If it\'s not perfect, we re-process it complimentary.', icon: '⭐' },
+        { title: 'Fabric-Specific Care', description: 'Every garment is treated based on its fabric, structure, and use, ensuring it receives the right process without damage or compromise.', icon: '⭐' },
+        { title: 'Expert Handling', description: 'Each piece is handled with precision and experience, ensuring delicate, designer, and everyday garments are finished to the highest standard.', icon: '⭐' },
+        { title: 'Seamless Pickup & Delivery', description: 'Your clothes are collected, processed, and delivered back to your doorstep on time, making the entire experience effortless and reliable.', icon: '⭐' },
+        { title: 'Consistent, Ready-to-Wear Finish', description: 'Every garment is returned fresh, neatly finished, and ready to wear, so you never have to worry about quality or presentation.', icon: '⭐' },
     ];
 
     howItWorks = [
@@ -35,13 +35,25 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     ];
 
     testimonials = [
-        { name: 'Arjun S.', review: 'The only service I trust with my bespoke suits. Their attention to detail and packaging is genuinely unmatched in Hyderabad.', location: 'Jubilee Hills' },
-        { name: 'Dr. Meera P.', review: 'They handle my silk sarees perfectly. The convenience of free pickup and the quality of dry cleaning is exceptional.', location: 'Banjara Hills' },
-        { name: 'Vikram R.', review: 'Consistent, premium, and flawless. The wash and iron service keeps my work wardrobe crisp all week. Highly recommended.', location: 'HITEC City' },
+        { name: 'Abhinayee Tailam', review: 'I am absolutely thrilled with the service from Hey! Laundry! I gave them my wedding silk saree which had some very stubborn stains, and I was honestly worried. They did a phenomenal job! Not only did they completely remove the tough stains, but the saree came back looking brand new. The staff was professional, attentive, and took great care with the delicate fabric.' },
+        { name: 'Vaishnavi Vardhan', review: 'I gave my sarees for dry cleaning and it was delivered to home less than the mentioned time.Its a new branch in serilingampally and service is awesome. Sarees look fresh.I would definetly reach them for future services.' },
+        { name: 'Spurtti Abburi', review: 'Excellent service from start to finish with a truly premium feel.Whites come back bright, fresh, and perfectly finished.Great attention to detail in folding, packaging, and care.Smooth turnaround with consistent, dependable service.Highly recommended for high-quality laundry care' },
     ];
+
+    currentMobileStack = 0;
+    private stackInterval: any;
 
     ngOnInit() {
         this.setupScrollAnimations();
+        
+        // Mobile Carousel Logic
+        if (typeof window !== 'undefined') {
+            this.stackInterval = setInterval(() => {
+                if (window.innerWidth <= 768) {
+                    this.currentMobileStack = (this.currentMobileStack + 1) % 5;
+                }
+            }, 3000);
+        }
     }
 
     ngAfterViewInit(): void {
@@ -57,6 +69,9 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     ngOnDestroy() {
         if (this.animationObserver) {
             this.animationObserver.disconnect();
+        }
+        if (this.stackInterval) {
+            clearInterval(this.stackInterval);
         }
     }
 

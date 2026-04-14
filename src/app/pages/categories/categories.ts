@@ -63,36 +63,44 @@ export class CategoriesComponent implements OnInit, OnDestroy {
 
     garmentCategories = [
         {
-            title: 'Luxury Brands',
-            subtitle: 'White-Glove Treatment for Prestigious Labels',
-            description: 'We understand the craftsmanship behind every luxury piece. From Gucci to Louis Vuitton, our certified specialists handle each garment with the reverence it deserves—using brand-recommended care protocols.',
+            title: 'Luxury Wear',
+            subtitle: 'Consistently Sharp. Every Time.',
+            description: 'Every piece is processed with attention to detail to ensure it is clean, well-finished, and ready to wear without compromise.',
             image: 'assets/images/cat-luxury-brands.png',
-            tags: ['Gucci', 'Prada', 'Louis Vuitton', 'Burberry', 'Armani'],
+            tags: ['Tuxedo', 'Suit ', ' Waistcoat', 'Gown', 'Shoes'],
             icon: '👑'
         },
         {
             title: 'Designer & Ethnic Wear',
-            subtitle: 'Artisanal Care for Exquisite Craftsmanship',
-            description: 'From hand-embroidered lehengas to intricately woven Banarasi sarees, our artisans specialize in preserving the beauty of ethnic and designer pieces with gentle, fiber-specific cleaning techniques.',
+            subtitle: 'Precision Care for Delicate Garments',
+            description: 'Every piece is handled with attention to detail and processed using the right methods to ensure it is cleaned, preserved, and returned in its best condition.',
             image: 'assets/images/cat-designer-ethnic.png',
             tags: ['Sarees', 'Lehengas', 'Sherwanis', 'Anarkalis', 'Bandhani'],
-            icon: '✨'
+
         },
         {
             title: 'Office & Daily Wear',
             subtitle: 'Crisp & Professional, Every Single Day',
-            description: 'Keep your everyday wardrobe looking sharp and fresh. Our efficient process ensures your shirts, trousers, and casual wear are immaculately cleaned, pressed, and ready for whatever the day brings.',
+            description: 'Everyday garments are processed with precision to ensure they are clean, well-finished, and ready to wear without compromise.',
             image: 'assets/images/cat-office-wear.png',
-            tags: ['Shirts', 'Trousers', 'T-Shirts', 'Jeans', 'Chinos'],
-            icon: '💼'
+            tags: ['Shirts', 'Trousers', 'T-Shirts', 'Jeans', 'Chinos', 'Formal Shoes'],
+
         },
         {
             title: 'Curtains & Home Linen',
-            subtitle: 'Refresh Your Living Spaces',
-            description: 'Extend our luxury care to your home. From heavy drapes and delicate sheers to premium bed linen and towels—we deep clean, deodorize, and restore your home textiles to their original glory.',
+            subtitle: 'Care That Extends to Your Space',
+            description: 'Home fabrics are thoroughly cleaned and handled with care to maintain freshness, structure, and long-term durability.',
             image: 'assets/images/cat-curtains-linen.png',
             tags: ['Curtains', 'Bedsheets', 'Duvets', 'Towels', 'Throws'],
-            icon: '🏠'
+
+        },
+        {
+            title: 'Shoe Cleaning',
+            subtitle: 'Expert Care for Every Step You Take',
+            description: 'Each pair of shoes is carefully treated to ensure deep cleaning without damaging the material, keeping them fresh, hygienic, and long-lasting.',
+            image: 'assets/images/Shoe-Cleaning1.jpeg',
+            tags: ['Sneakers', 'Formal Shoes', 'Leather Shoes', 'Sports Shoes', 'Loafers'],
+
         }
     ];
 

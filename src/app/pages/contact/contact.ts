@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -22,46 +21,71 @@ export class ContactComponent {
   isSubmitting = false;
   submitStatus: string = 'idle';
 
+  private readonly googleScriptUrl = 'https://script.google.com/macros/s/AKfycbxZQCDqMyD3knb61J_85_hpTrhVVYdDSiZVie3rFY-5g_wYJePo6FJSRAzzPPib48mSew/exec';
+  private readonly whatsappNumber = '919949630707';
+
   async onSubmit() {
+
+    if (!this.formData.name || !this.formData.email || !this.formData.phone || !this.formData.service) {
+      return;
+    }
+
     this.isSubmitting = true;
     this.submitStatus = 'idle';
 
-    try {
-      // Send the email using EmailJS
-      // Ensure you replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_PUBLIC_KEY' with your actual EmailJS details.
-      await emailjs.send(
-        'service_id', 
-        'template_id', 
-        {
-          from_name: this.formData.name,
-          reply_to: this.formData.email,
-          phone: this.formData.phone,
-          service_requested: this.formData.service,
-          message: this.formData.message,
-          to_name: 'Hey Laundry Team'
-        },
-        'public_key'
-      );
+    const data = {
+      name: this.formData.name,
+      email: this.formData.email,
+      phone: this.formData.phone,
+      service: this.formData.service,
+      message: this.formData.message
+    };
 
-      this.submitStatus = 'success';
-      // Reset form on success
-      this.formData = {
-        name: '',
-        email: '',
-        phone: '',
-        service: 'Wash & Fold',
-        message: ''
-      };
-    } catch (error) {
-      console.error('FAILED...', error);
-      this.submitStatus = 'error';
-    } finally {
-      this.isSubmitting = false;
-      setTimeout(() => {
-        if (this.submitStatus === 'success') {
-          this.submitStatus = 'idle';
-        }
-      }, 5000); // Reset status messages after 5 seconds
-    }
+    const whatsappMessage = `Hi
+
+New Contact Request
+
+Name: ${this.formData.name}
+Phone: ${this.formData.phone}
+Email: ${this.formData.email}
+Service: ${this.formData.service}
+Message: ${this.formData.message}`;
+
+    const whatsappUrl = `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    // ✅ Open WhatsApp instantly
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+    // ✅ Show success instantly (NO WAIT)
+    this.submitStatus = 'success';
+    this.isSubmitting = false;
+
+    // ✅ Reset form instantly
+    this.formData = {
+      name: '',
+      email: '',
+      phone: '',
+      service: 'Wash & Fold',
+      message: ''
+    };
+
+    // ✅ Send to Google Sheets in background (no blocking)
+    const body = new URLSearchParams();
+    body.set('name', data.name);
+    body.set('email', data.email);
+    body.set('phone', data.phone);
+    body.set('service', data.service);
+    body.set('message', data.message);
+
+    fetch(this.googleScriptUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      body
+    }).catch(err => console.error('Sheet Error:', err));
+
+    // ✅ Hide success after 5 sec
+    setTimeout(() => {
+      this.submitStatus = 'idle';
+    }, 5000);
   }
 }

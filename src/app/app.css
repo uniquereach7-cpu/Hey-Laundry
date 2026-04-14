@@ -2,3 +2,124 @@
 .page-transition-wrapper {
   animation: fadeIn 0.6s ease-out;
 }
+
+/* Global Floating WhatsApp Button */
+.global-floating-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.global-floating-whatsapp:hover {
+    background-color: #128C7E;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+    color: #fff;
+}
+
+.global-floating-whatsapp svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Reduced size specifically on mobile phones as requested */
+@media (max-width: 768px) {
+    .global-floating-whatsapp {
+        bottom: 20px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+    .global-floating-whatsapp svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Legal Pages Global Styling */
+.legal-page {
+    background-color: var(--bg-secondary);
+}
+
+.legal-content {
+    text-align: left;
+}
+
+.legal-content h2 {
+    font-size: 1.8rem;
+    color: var(--navy-dark);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
+    text-align: left;
+}
+
+.legal-content h3 {
+    font-size: 1.4rem;
+    color: var(--gold-dark);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+    text-align: left;
+}
+
+.legal-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #302C26; /* Using var(--warm-700) or close equivalent for readability */
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.legal-content ul {
+    margin-bottom: 25px;
+    padding-left: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.legal-content ul ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.legal-content ul li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #302C26;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 28px;
+    text-align: left;
+}
+
+.legal-content ul li::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--gold-dark);
+    box-shadow: 0 0 4px rgba(212, 152, 53, 0.4);
+}
+
+.legal-content a {
+    color: var(--gold-dark);
+    text-decoration: underline;
+    font-weight: 500;
+}

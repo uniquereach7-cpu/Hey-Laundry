@@ -1,6 +1,8 @@
 <main class="page-contact luxury-theme" itemscope itemtype="https://schema.org/ContactPage">
     <div class="header-spacer"></div>
 
+    <!-- Creative avant-garde Hero Section -->
+
     <section class="luxury-contact-section">
         <div class="container">
             <div class="contact-grid">
@@ -12,8 +14,8 @@
                             You</span></h2>
 
                     <div class="seo-text mb-4">
-                        <p>As Hyderabad's premier eco-friendly wash and professional dry cleaners, we ensure your luxury
-                            garments receive unparalleled attention.</p>
+                        <p>Combining Quality Service with premium care, we provide professional washing and dry cleaning
+                            services across Hyderabad.</p>
                     </div>
 
                     <div class="info-blocks">
@@ -21,29 +23,33 @@
                             <span class="info-icon">✦</span>
                             <div>
                                 <h4>Visit Us</h4>
-                                <p>Banjara Hills, Hyderabad<br />Telangana, IN 500034</p>
+                                <p class="text-gold"><a href="https://maps.app.goo.gl/rtfxBA3fHoi8M1Av6" target="_blank"
+                                        style="text-decoration: none;">Nallagandla</a><br /><a
+                                        href="https://maps.app.goo.gl/p9Y9eDz6CvZcy76m8" target="_blank"
+                                        style="text-decoration: none;">Lingampally</a></p>
                             </div>
                         </div>
                         <div class="info-block">
                             <span class="info-icon">✦</span>
                             <div>
                                 <h4>Call Us</h4>
-                                <p><a href="tel:+919876543210" class="text-gold">+91 98765 43210</a></p>
+                                <p><a href="tel:+919949630707" class="text-gold">+91 9949630707</a></p>
                             </div>
                         </div>
                         <div class="info-block">
                             <span class="info-icon">✦</span>
                             <div>
                                 <h4>Email Us</h4>
-                                <p><a href="mailto:hello@heylaundry.in" class="text-gold">hello@heylaundry.in</a></p>
+                                <p><a href="mailto:hello@heylaundry.in" class="text-gold">
+                                        info@heylaundry.in</a></p>
                             </div>
                         </div>
                     </div>
 
                     <div class="business-hours mt-40">
-                        <h4>Concierge Hours</h4>
+                        <h4>Working Hours</h4>
                         <p>Our premium pickup team is available 7 days a week.</p>
-                        <p class="hours text-gold"><strong>Mon - Sun:</strong> 7:00 AM - 9:00 PM</p>
+                        <p class="hours text-gold"><strong>Mon - Sun:</strong> 10:00 AM - 8:00 PM</p>
                     </div>
                 </div>
 
@@ -74,9 +80,11 @@
                             <select id="service" name="service" [(ngModel)]="formData.service"
                                 class="form-control luxury-input">
                                 <option value="Wash & Fold">Wash & Fold</option>
-                                <option value="Wash & Iron">Wash & Iron</option>
-                                <option value="Luxury Dry Cleaning">Luxury Dry Cleaning</option>
-                                <option value="Couture Service">Couture Garment Care</option>
+                                <option value="Wash & Iron">Wash & Steam Press</option>
+                                <option value="Luxury Dry Cleaning">Premium Dry Cleaning</option>
+                                <option value="Couture Service">Premium Laundry</option>
+                                <option value="Couture Service">Shoe Cleaning</option>
+                                <option value="Couture Service">Steam Press Only</option>
                                 <option value="Other">Other Consultation</option>
                             </select>
                         </div>
@@ -108,7 +116,7 @@
             </div>
 
             <!-- Enhanced Location Map Section -->
-            <div class="map-container glossy-card premium-border reveal-up mt-4">
+            <!-- <div class="map-container glossy-card premium-border reveal-up mt-4">
                 <div class="pkg-header text-center mb-4">
                     <p class="section-label">Find Us</p>
                     <h3 class="gradient-text-gold">Our Flagship Location</h3>
@@ -118,8 +126,41 @@
                     width="100%" height="400" style="border:0; border-radius: var(--radius-md); opacity: 0.9;"
                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
+            </div> -->
+
+        </div>
+    </section>
+
+    <!-- Premium FAQ Section -->
+    <section class="luxury-faq-section">
+        <div class="container">
+            <div class="text-center reveal">
+                <p class="section-label">Enquiries</p>
+                <h2 class="section-title text-white">Frequently Asked <span class="gradient-text-gold">Questions</span>
+                </h2>
             </div>
 
+            <div class="faq-grid">
+                <div class="faq-card glossy-card reveal-up">
+                    <h4>Free Doorstep Assistance?</h4>
+                    <p>Yes, we offer doorstep pickup and delivery across major Hyderabad locales for services over ₹500.
+                    </p>
+                </div>
+                <div class="faq-card glossy-card reveal-up reveal-delay-1">
+                    <h4>Service Timeline?</h4>
+                    <p>Standard care requires 24-72 hours. Express same-day service is available for our priority
+                        clientele.</p>
+                </div>
+                <div class="faq-card glossy-card reveal-up">
+                    <h4>Individual Processing?</h4>
+                    <p>Absolutely. Every client's wardrobe is processed independently in dedicated machines.</p>
+                </div>
+                <div class="faq-card glossy-card reveal-up reveal-delay-1">
+                    <h4>Weather Protection?</h4>
+                    <p>Garments are returned in our signature weatherproof carriers, ensuring they remain untouched by
+                        the elements.</p>
+                </div>
+            </div>
         </div>
     </section>
 </main>

@@ -27,6 +27,21 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/contact/contact').then(m => m.ContactComponent)
   },
   {
+    path: 'privacy-policy',
+    title: 'Privacy Policy | Hey Laundry',
+    loadComponent: () => import('./pages/privacy/privacy').then(m => m.PrivacyComponent)
+  },
+  {
+    path: 'return-cancellation-policy',
+    title: 'Return & Cancellation Policy | Hey Laundry',
+    loadComponent: () => import('./pages/return/return').then(m => m.ReturnComponent)
+  },
+  {
+    path: 'terms-conditions',
+    title: 'Terms & Conditions | Hey Laundry',
+    loadComponent: () => import('./pages/terms/terms').then(m => m.TermsComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }

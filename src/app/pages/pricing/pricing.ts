@@ -53,15 +53,7 @@ export class PricingComponent implements OnInit, OnDestroy {
         { item: 'Blanket / Comforter', washFold: '₹150', washIron: '—', dryCleaning: '₹400' },
     ];
 
-    faqs = [
-        { question: 'How does pickup & delivery work?', answer: 'Just schedule a pickup through our website or give us a call! Our team arrives at your doorstep, collects your garments, and delivers them back fresh and clean. Zero effort on your end! 🚗', open: false },
-        { question: 'What if my clothes are damaged?', answer: 'We treat every garment with the utmost care. In the extremely rare event of any damage, our garment insurance covers the full cost. Your clothes are safe with us! 🛡️', open: false },
-        { question: 'How long does the service take?', answer: 'Essential plan: 48-hour turnaround. Premium: 24 hours. Signature: Same-day rush option available! Need it faster? Just let us know. ⚡', open: false },
-        { question: 'Can I pick my detergent?', answer: 'Absolutely! We offer standard, premium eco-friendly, and hypoallergenic options. Just tell us your preference when you book! 🌿', open: false },
-        { question: 'Is there a minimum order?', answer: 'Nope! Whether it is a single shirt or a mountain of laundry — we handle it all with the same level of care. 😊', open: false },
-    ];
 
-    toggleFaq(index: number) { this.faqs[index].open = !this.faqs[index].open; }
 
     ngOnInit() { this.setupScrollAnimations(); }
     ngOnDestroy() { this.animationObserver?.disconnect(); }

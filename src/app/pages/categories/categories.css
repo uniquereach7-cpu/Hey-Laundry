@@ -818,3 +818,15 @@
         padding: 16px 20px 24px;
     }
 }
+
+/* Center the last card if it's the 5th item (odd) in the 2-column grid */
+@media (min-width: 769px) {
+    .garment-grid .garment-card:last-child:nth-child(odd) {
+        grid-column: 1 / span 2;
+        /* Make it span both columns */
+        justify-self: center;
+        /* Center it horizontally */
+        width: calc(50% - 16px);
+        /* Keep it the same width as the other cards (50% minus half the 32px gap) */
+    }
+}

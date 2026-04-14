@@ -354,6 +354,38 @@ select.luxury-input option {
     color: var(--navy-dark) !important;
 }
 
+/* FAQ Section */
+.luxury-faq-section {
+    padding: 120px 0;
+    background: var(--bg-secondary);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.faq-card {
+    padding: 40px;
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(8, 36, 61, 0.04);
+}
+
+.faq-card h4 {
+    font-size: 1.25rem;
+    color: var(--navy);
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+}
+
+.faq-card p {
+    color: var(--warm-500);
+    line-height: 1.8;
+}
+
 @media (max-width: 1024px) {
     .contact-grid {
         grid-template-columns: 1fr;
@@ -362,6 +394,10 @@ select.luxury-input option {
 }
 
 @media (max-width: 768px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
     .form-row {
         flex-direction: column;
         gap: 0;

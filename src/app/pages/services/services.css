@@ -33,7 +33,7 @@
 .glass-overlay.dark-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(5,21,36,0.8) 0%, var(--navy-dark) 100%);
+    background: linear-gradient(180deg, rgba(5, 21, 36, 0.8) 0%, var(--navy-dark) 100%);
     z-index: 1;
 }
 
@@ -57,9 +57,17 @@
     line-height: 1.8;
 }
 
-.text-white { color: var(--white) !important; }
-.text-opacity { color: rgba(255,255,255,0.7) !important; }
-.text-gold { color: var(--gold) !important; }
+.text-white {
+    color: var(--white) !important;
+}
+
+.text-opacity {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.text-gold {
+    color: var(--gold) !important;
+}
 
 /* Horizontal Cards Layout */
 .horizontal-services-section {
@@ -79,7 +87,9 @@
     overflow: hidden;
     box-shadow: 0 30px 60px rgba(8, 36, 61, 0.15);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    background: var(--navy-dark); /* Fallback */
+    background: var(--navy-dark);
+    /* Fallback */
+    scroll-margin-top: max(120px, calc(50vh - 200px));
 }
 
 .service-horizontal-card:hover {
@@ -90,11 +100,16 @@
 .card-bg-image {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat;
     transition: transform 1s ease;
     z-index: 0;
-    opacity: 0.7;
+    opacity: 0.9;
+}
+
+.service-horizontal-card.reverse .card-bg-image {
+    background-position: left center;
 }
 
 .service-horizontal-card:hover .card-bg-image {
@@ -262,10 +277,13 @@
     border-color: var(--gold);
 }
 
-.mt-4 { margin-top: 10px; }
+.mt-4 {
+    margin-top: 10px;
+}
 
 @media (max-width: 1024px) {
-    .card-glass-content, 
+
+    .card-glass-content,
     .service-horizontal-card.reverse .card-glass-content {
         width: 70%;
         padding: 40px;
@@ -273,13 +291,97 @@
 }
 
 @media (max-width: 768px) {
-    .card-glass-content, 
+
+    .card-glass-content,
     .service-horizontal-card.reverse .card-glass-content {
         width: 90%;
         margin: 20px auto;
         padding: 40px 24px;
     }
+
     .services-hero h1 {
         font-size: 3rem;
+    }
+}
+
+/* Add-on Services Section */
+.addon-services-section {
+    padding: 60px 0 100px;
+    background: transparent;
+    position: relative;
+    z-index: 10;
+}
+
+.addon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: left;
+}
+
+.addon-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(8, 36, 61, 0.08);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(8, 36, 61, 0.05);
+}
+
+.addon-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(8, 36, 61, 0.15);
+    border-color: rgba(242, 188, 96, 0.5);
+}
+
+.addon-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.addon-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.addon-card:hover .addon-image img {
+    transform: scale(1.05);
+}
+
+.addon-content {
+    padding: 30px;
+}
+
+.addon-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--navy-dark);
+    margin-bottom: 12px;
+}
+
+.addon-content p {
+    font-size: 0.95rem;
+    color: var(--warm-600);
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .addon-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .addon-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .addon-services-section h2 {
+        font-size: 2.2rem !important;
     }
 }
