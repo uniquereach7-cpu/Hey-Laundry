@@ -40,20 +40,8 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
         { name: 'Spurtti Abburi', review: 'Excellent service from start to finish with a truly premium feel.Whites come back bright, fresh, and perfectly finished.Great attention to detail in folding, packaging, and care.Smooth turnaround with consistent, dependable service.Highly recommended for high-quality laundry care' },
     ];
 
-    currentMobileStack = 0;
-    private stackInterval: any;
-
     ngOnInit() {
         this.setupScrollAnimations();
-        
-        // Mobile Carousel Logic
-        if (typeof window !== 'undefined') {
-            this.stackInterval = setInterval(() => {
-                if (window.innerWidth <= 768) {
-                    this.currentMobileStack = (this.currentMobileStack + 1) % 5;
-                }
-            }, 3000);
-        }
     }
 
     ngAfterViewInit(): void {
@@ -69,9 +57,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     ngOnDestroy() {
         if (this.animationObserver) {
             this.animationObserver.disconnect();
-        }
-        if (this.stackInterval) {
-            clearInterval(this.stackInterval);
         }
     }
 

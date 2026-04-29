@@ -3,7 +3,7 @@
     <!-- ===== CINEMATIC LUXURY HERO ===== -->
     <section class="hero-video-wrapper" id="hero-section">
         <!-- Background Video -->
-        <video #promoVideo autoplay loop muted [muted]="true" playsinline class="hero-bg-video">
+        <video #promoVideo preload="auto" autoplay loop muted [muted]="true" playsinline class="hero-bg-video">
             <source src="assets/images/video.mp4" type="video/mp4" />
         </video>
         <div class="hero-video-overlay"></div>
@@ -108,7 +108,7 @@
                 <!-- Service 1: Premium Dry Cleaning -->
                 <div class="service-card-compact reveal-up delay-0">
                     <div class="card-img-wrap">
-                        <img src="assets/images/premium-saree.jpeg" alt="Premium Dry Cleaning">
+                        <img src="assets/images/premium-saree.jpeg" alt="Premium Dry Cleaning" loading="eager" fetchpriority="high">
                     </div>
                     <div class="service-card-body">
                         <h3>Premium Dry Cleaning</h3>
@@ -190,17 +190,15 @@
             <div class="stack-header reveal">
                 <p class="section-label">Our Categories</p>
                 <h2 class="section-title">Expert Care Tailored to<br /><span class="gradient-text">Every Type of
-                        Garment</span>
-                </h2>
+                        Garment</span></h2>
                 <p class="section-subtitle">
                     Scroll down to explore our premium fabric care solutions. Each service crafted meticulously for your
                     lifestyle.
                 </p>
             </div>
 
-            <div class="stacked-cards-wrapper mobile-carousel-wrapper">
-                <!-- Card 1 -->
-                <div class="stack-card card-1" [class.mobile-active]="currentMobileStack === 0" id="stack-wash-fold">
+            <div class="stacked-cards-wrapper">
+                <div class="stack-card card-1" id="stack-wash-fold">
                     <div class="stack-card-content">
                         <div class="stack-info">
                             <span class="stack-number">01</span>
@@ -215,8 +213,7 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="stack-card card-2" [class.mobile-active]="currentMobileStack === 1" id="stack-wash-iron">
+                <div class="stack-card card-2" id="stack-wash-iron">
                     <div class="stack-card-content">
                         <div class="stack-info">
                             <span class="stack-number">02</span>
@@ -231,8 +228,7 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="stack-card card-3" [class.mobile-active]="currentMobileStack === 2" id="stack-dry-clean">
+                <div class="stack-card card-3" id="stack-office-wear">
                     <div class="stack-card-content">
                         <div class="stack-info">
                             <span class="stack-number">03</span>
@@ -248,8 +244,7 @@
                     </div>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="stack-card card-3" [class.mobile-active]="currentMobileStack === 3" id="stack-dry-clean">
+                <div class="stack-card card-4" id="stack-curtains">
                     <div class="stack-card-content">
                         <div class="stack-info">
                             <span class="stack-number">04</span>
@@ -265,8 +260,7 @@
                     </div>
                 </div>
 
-                <!-- Card 5 -->
-                <div class="stack-card card-3" [class.mobile-active]="currentMobileStack === 4" id="stack-dry-clean">
+                <div class="stack-card card-5" id="stack-shoe-cleaning">
                     <div class="stack-card-content">
                         <div class="stack-info">
                             <span class="stack-number">05</span>
@@ -287,7 +281,6 @@
             </div>
         </div>
     </section>
-
     <!-- ===== HOW IT WORKS ===== -->
     <section class="how-it-works" id="how-it-works">
         <div class="container">
@@ -306,7 +299,7 @@
                 <!-- Step 1 -->
                 <div class="t-node reveal-up">
                     <div class="t-node-visual">
-                        <img src="assets/images/pickup.jpeg" loading="lazy" alt="Pickup">
+                        <img src="assets/images/pickup.jpeg" loading="eager" alt="Pickup">
                         <div class="t-badge">01</div>
                     </div>
                     <div class="t-node-content">
@@ -318,7 +311,7 @@
                 <!-- Step 2 -->
                 <div class="t-node reveal-up delay-1">
                     <div class="t-node-visual">
-                        <img src="assets/images/inspection.jpeg" loading="lazy" alt="Inspection">
+                        <img src="assets/images/inspection.jpeg" loading="eager" alt="Inspection">
                         <div class="t-badge">02</div>
                     </div>
                     <div class="t-node-content">

@@ -34,6 +34,99 @@
 
   <link rel="canonical" href="https://heylaundry.in/">
 
+  <!-- High Priority Preloads for Instant Performance -->
+  <link rel="preload" href="assets/images/loogoo.png" as="image">
+  <link rel="preload" href="assets/images/video.mp4" as="video">
+
+  <!-- Resource Pre-fetching -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <!-- Background Asset Pre-fetcher Script -->
+  <script>
+    (function() {
+      // Register Service Worker for aggressive caching
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service worker registered'))
+            .catch(err => console.log('Service worker registration failed', err));
+        });
+      }
+
+      const criticalAssets = [
+        'assets/images/why.jpg',
+        'assets/images/luxury-hero.png',
+        'assets/images/premium-saree.jpeg',
+        'assets/images/hpremiumdry.jpg',
+        'assets/images/hey6.jpg',
+        'assets/images/hey1.jpg',
+        'assets/images/hey5.jpg'
+      ];
+
+      // Pre-fetch assets after initial load to not block DOM parsing
+      window.addEventListener('load', () => {
+        // Higher priority context for certain images
+        criticalAssets.forEach(url => {
+          const link = document.createElement('link');
+          link.rel = 'prefetch';
+          link.href = url;
+          document.head.appendChild(link);
+        });
+
+        // Smart pre-fetch for all other assets mentioned in script
+        const allAssets = [
+          'assets/images/loogoo.png',
+          'assets/images/category1.png',
+          'assets/images/category2.png',
+          'assets/images/category3.png',
+          'assets/images/category4.png',
+          'assets/images/steam-press-only.png',
+          'assets/images/hwashandiron.jpg',
+          'assets/images/sneakers3.jpeg',
+          'assets/images/saree--rolling.jpg',
+          'assets/images/sneakers1.jpeg',
+          'assets/images/pickup.jpeg',
+          'assets/images/inspection.jpeg',
+          'assets/images/stain-mapping.jpeg',
+          'assets/images/fabric-safe-cleaning.jpeg',
+          'assets/images/steaming.jpeg',
+          'assets/images/packing-delivery.jpeg',
+          'assets/images/premium-dry-cleaning.png',
+          'assets/images/premium-laundry.png',
+          'assets/images/wash-and-iron.png',
+          'assets/images/wash-and-fold.png',
+          'assets/images/sneaker cleaning_.png',
+          'assets/images/saree-rolling45.jpeg',
+          'assets/images/Ganji1.jpeg',
+          'assets/images/delivery.jpg',
+          'assets/images/offers1.jpeg',
+          'assets/images/offers2.jpeg',
+          'assets/images/offers3.jpeg',
+          'assets/images/offers4.jpeg',
+          'assets/images/luxury-drycleaning.png',
+          'assets/images/hey7.jpg',
+          'assets/images/hey9.jpg',
+          'assets/images/luxury-care.png',
+          'assets/images/luxury-linens.png',
+          'assets/images/cat-luxury-brands.png',
+          'assets/images/cat-designer-ethnic.png',
+          'assets/images/cat-office-wear.png',
+          'assets/images/cat-curtains-linen.png',
+          'assets/images/Shoe-Cleaning1.jpeg',
+          'assets/images/hey3.jpg'
+        ];
+
+        setTimeout(() => {
+          allAssets.forEach(url => {
+            const img = new Image();
+            img.src = url;
+          });
+        }, 1000);
+      });
+    })();
+  </script>
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://heylaundry.in/">

@@ -1,6 +1,6 @@
 /* Main app component styles */
 .page-transition-wrapper {
-  animation: fadeIn 0.6s ease-out;
+    animation: fadeIn 0.6s ease-out;
 }
 
 /* Global Floating WhatsApp Button */
@@ -36,15 +36,16 @@
 /* Reduced size specifically on mobile phones as requested */
 @media (max-width: 768px) {
     .global-floating-whatsapp {
-        bottom: 20px;
-        right: 20px;
-        width: 48px;
-        height: 48px;
+        bottom: 70px;
+        right: 35px;
+        width: 50px;
+        height: 50px;
         box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
     }
+
     .global-floating-whatsapp svg {
-        width: 24px;
-        height: 24px;
+        width: 26px;
+        height: 26px;
     }
 }
 
@@ -78,7 +79,8 @@
 .legal-content p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #302C26; /* Using var(--warm-700) or close equivalent for readability */
+    color: #302C26;
+    /* Using var(--warm-700) or close equivalent for readability */
     margin-bottom: 20px;
     text-align: left;
 }

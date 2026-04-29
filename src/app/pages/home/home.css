@@ -597,6 +597,17 @@
     top: 150px;
 }
 
+.card-4 {
+    top: 180px;
+}
+
+/* Added missing offset */
+.card-5 {
+    top: 210px;
+}
+
+/* Added missing offset */
+
 /* Dynamic Shadow Depth based on stacking */
 .card-2 .stack-card-content {
     box-shadow: 0 -10px 40px rgba(8, 36, 61, 0.05);
@@ -606,6 +617,16 @@
     box-shadow: 0 -10px 40px rgba(8, 36, 61, 0.08);
 }
 
+.card-4 .stack-card-content {
+    box-shadow: 0 -10px 40px rgba(8, 36, 61, 0.1);
+}
+
+/* Added shadow */
+.card-5 .stack-card-content {
+    box-shadow: 0 -10px 40px rgba(8, 36, 61, 0.12);
+}
+
+/* Added shadow */
 /* ===== WHY US ===== */
 .why-us {
     padding: var(--section-padding);
@@ -1109,31 +1130,7 @@
         width: 100%;
     }
 
-    .mobile-carousel-wrapper {
-        position: relative;
-        overflow: hidden; /* prevents height shifting wildly if fixed height is needed, or just let it flow */
-        min-height: 500px;
-    }
-
-    .stack-card {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0;
-        width: 100%;
-        margin-bottom: 24px;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.6s ease, visibility 0.6s ease;
-        z-index: 1;
-    }
-
-    .stack-card.mobile-active {
-        opacity: 1;
-        visibility: visible;
-        position: relative !important; /* Forces the container to have height */
-        z-index: 2;
-    }
-
+    /* Stacking Card Edits for Mobile - Maintained Sticky behavior */
     .stack-card-content {
         flex-direction: column;
         gap: 24px;
@@ -1156,6 +1153,27 @@
 
     .stacked-cards-wrapper {
         padding-bottom: 20px;
+    }
+
+    /* Adjusted Mobile Offsets so they don't take up too much vertical screen space */
+    .card-1 {
+        top: 60px;
+    }
+
+    .card-2 {
+        top: 80px;
+    }
+
+    .card-3 {
+        top: 100px;
+    }
+
+    .card-4 {
+        top: 120px;
+    }
+
+    .card-5 {
+        top: 140px;
     }
 
     .stats-grid {
@@ -1280,22 +1298,5 @@
 
     .image-break-content h2 {
         font-size: 1.6rem;
-    }
-}
-
-/* ========================================
-   LAPTOP/DESKTOP GAP REDUCTION
-   (Screens wider than 1024px)
-   ======================================== */
-@media (min-width: 1025px) {
-    .hero-video-wrapper {
-        /* Reduces total hero height from 100vh to 85vh to pull marquee up */
-        height: 120vh !important;
-        min-height: 650px !important;
-    }
-
-    .hero-actions-center {
-        /* Reduces space between the buttons and the bottom of the content block */
-        margin-bottom: 10px !important;
     }
 }

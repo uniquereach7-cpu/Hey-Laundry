@@ -15,7 +15,7 @@
 .top-nav-row {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
@@ -263,11 +263,11 @@ header.scrolled {
 @media (max-width: 768px) {
     :host {
         top: 12px;
-        padding: 0 16px;
+        padding: 0 50px;
     }
 
     .logo-img {
-        height: 90px;
+        height: 80px;
     }
 
     .header-container {
@@ -278,7 +278,7 @@ header.scrolled {
 
     .mobile-nav {
         top: 66px;
-        width: calc(100vw - 32px);
+        width: calc(100vw - 56px);
     }
 
     .desktop-nav,
@@ -362,52 +362,39 @@ header.scrolled {
 
 /* Responsive Fixes */
 @media (max-width: 768px) {
-    :host {
-        top: 12px;
-        padding: 0 16px;
-    }
 
     /* 1. Align Logo and Header Container horizontally */
     .top-nav-row {
         align-items: center;
-        /* Ensures logo and header bar stay on the same level */
     }
 
-    /* 2. Bring Logo "Down" by adjusting the negative margin */
+    /* 2. Logo aligned properly — no negative margin overhang */
     .floating-logo {
-        margin-top: -5px;
-        /* Reduced from -35px to bring it down into alignment */
+        margin-top: 0;
     }
 
     .logo-img {
-        height: 90px;
-        /* Slightly reduced height to fit better with the menu bar */
+        height: 80px;
     }
 
     .header-container {
         padding: 6px 12px;
-        height: 50px;
-        /* Adjusted height for a sleeker mobile look */
+        height: 56px;
         gap: 0;
     }
 
-    /* 3. Reduce Hamburger Menu Lines Size */
+    /* 3. Hamburger Menu */
     .mobile-menu-btn {
         display: flex;
         padding: 8px;
-        /* Tighter padding */
         gap: 4px;
-        /* Slightly closer lines */
     }
 
     .mobile-menu-btn span {
-        width: 18px;
-        /* Reduced from 24px */
+        width: 20px;
         height: 2px;
-        /* Reduced from 2.5px */
     }
 
-    /* Adjust the X transformation for the smaller lines */
     .mobile-menu-btn.active span:nth-child(1) {
         transform: translateY(6px) rotate(45deg);
     }
@@ -418,8 +405,8 @@ header.scrolled {
 
     /* Mobile Nav Adjustments */
     .mobile-nav {
-        top: 60px;
-        width: calc(100vw - 32px);
+        top: 66px;
+        width: calc(100vw - 70px);
     }
 
     .desktop-nav,
